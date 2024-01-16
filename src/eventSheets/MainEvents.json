@@ -1,0 +1,426 @@
+{
+	"name": "MainEvents",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "BootAnimationFinished",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 108764067813729
+		},
+		{
+			"eventType": "variable",
+			"name": "SplashScreenFinished",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 505539234361785
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayingBootupAnimations",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 598501158829905
+		},
+		{
+			"eventType": "variable",
+			"name": "Level",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 638426346677764
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LevelControl",
+			"description": "This segment of code will decide which level you are on. Level 0 is the tutorial.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 729294666739894,
+							"parameters": {
+								"variable": "Level",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 961628622822004,
+							"parameters": {
+								"group-name": "\"Tutorial\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 773165052909886
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 862413541228514
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 278364202910810,
+							"parameters": {
+								"group-name": "\"Level\" & Level",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 820963497062831
+				}
+			],
+			"sid": 839044350201570
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 409314492568172,
+					"parameters": {
+						"variable": "PlayingBootupAnimations"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 249308389904639,
+					"parameters": {
+						"group-name": "\"StartupScreen\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "FirstStartAnimation",
+					"sid": 120565650645885,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "StartAnimation",
+					"sid": 694322113178235,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 163100926637002,
+					"parameters": {
+						"variable": "SplashScreenFinished",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 934311859816758
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "StartupScreen",
+			"description": "Adds some immersive flair while the game is secretly setting up in the background",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 706042711347510
+						}
+					],
+					"actions": [
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 382607340419470
+						}
+					],
+					"sid": 835207958396966
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "FirstTimeStartup",
+					"description": "Eva? What's an eva? I don't know what that big robot is????",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 173731230233502
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "FirstStartAnimation",
+									"sid": 357705117554953,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "FirstStartAnimation",
+									"sid": 330113660595101,
+									"parameters": {
+										"animation": "\"Static\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 997013619665735,
+									"parameters": {
+										"seconds": "3.0"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "FirstStartAnimation",
+									"sid": 810229013029543,
+									"parameters": {
+										"animation": "\"Crosshairs\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 743971254642565
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "FirstStartAnimation",
+									"sid": 277865769179749,
+									"parameters": {
+										"animation": "\"Crosshairs\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 217986040198508,
+									"parameters": {
+										"seconds": "2.0"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "FirstStartAnimation",
+									"sid": 758497144483037,
+									"parameters": {
+										"animation": "\"ComputerText\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 899845888079712
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "FirstStartAnimation",
+									"sid": 677938066662100,
+									"parameters": {
+										"animation": "\"ComputerText\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 143504323099846,
+									"parameters": {
+										"variable": "BootAnimationFinished",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "FirstStartAnimation",
+									"sid": 277522194576860,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 883390793425442
+						}
+					],
+					"sid": 814568025958259
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "SplashScreen",
+					"description": "Purveyor to the Royal Court of Sweden. (For legal reasons, not really)",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 292492329959120,
+									"parameters": {
+										"variable": "BootAnimationFinished"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "StartAnimation",
+									"sid": 810863796694125,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "StartAnimation",
+									"sid": 169118398500408,
+									"parameters": {
+										"animation": "\"Loading\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 929029808564061
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "StartAnimation",
+									"sid": 204874985799937,
+									"parameters": {
+										"animation": "\"Loading\""
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 210316568712054,
+									"parameters": {
+										"variable": "BootAnimationFinished"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 246082171300626,
+									"parameters": {
+										"variable": "SplashScreenFinished",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 368038935841039,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 987613970217821,
+											"parameters": {
+												"count": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "StartAnimation",
+											"sid": 895075766463960,
+											"parameters": {
+												"opacity": "StartAnimation.Opacity - 10"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 198369316675438,
+											"parameters": {
+												"seconds": "0.5"
+											}
+										}
+									],
+									"sid": 299363092078331
+								}
+							]
+						}
+					],
+					"sid": 375322507755791
+				}
+			],
+			"sid": 725941318996752
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Tutorial",
+			"description": "Tutors",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 731984112143483
+		}
+	],
+	"sid": 693809518147746
+}
