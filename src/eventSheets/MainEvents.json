@@ -42,6 +42,85 @@
 			"sid": 638426346677764
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 717852909995582
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "Rockets",
+					"sid": 704751457323948,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "ING875",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				}
+			],
+			"sid": 104008703679154
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 282445349964659,
+					"parameters": {
+						"variable": "PlayingBootupAnimations"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 449807798358085,
+					"parameters": {
+						"group-name": "\"StartupScreen\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "FirstStartAnimation",
+					"sid": 361093829654106,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "StartAnimation",
+					"sid": 553243971255291,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 599488975169235,
+					"parameters": {
+						"variable": "SplashScreenFinished",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 707305248325983
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "LevelControl",
@@ -99,57 +178,6 @@
 				}
 			],
 			"sid": 839044350201570
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 409314492568172,
-					"parameters": {
-						"variable": "PlayingBootupAnimations"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 249308389904639,
-					"parameters": {
-						"group-name": "\"StartupScreen\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "FirstStartAnimation",
-					"sid": 120565650645885,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "StartAnimation",
-					"sid": 694322113178235,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 163100926637002,
-					"parameters": {
-						"variable": "SplashScreenFinished",
-						"value": "true"
-					}
-				}
-			],
-			"sid": 934311859816758
 		},
 		{
 			"eventType": "group",
@@ -420,6 +448,286 @@
 			"isActiveOnStart": true,
 			"children": [],
 			"sid": 731984112143483
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ShipControl",
+			"description": "Rule set for the ship's control scheme.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Combat",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "while",
+									"objectClass": "System",
+									"sid": 539281772673271
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 935056001638120,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 406713359031840,
+									"parameters": {
+										"interval-seconds": ".25"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "ING875",
+									"sid": 136928154689332,
+									"parameters": {
+										"object": "LaserBlast",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "LaserBlast",
+									"sid": 719636550097528,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "270"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "LaserBlast",
+									"sid": 863482641797794,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 209033847450550
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "while",
+									"objectClass": "System",
+									"sid": 975170943664214
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 507671797075619,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 729575786604093,
+									"parameters": {
+										"interval-seconds": ".25"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "ING875",
+									"sid": 606071963960165,
+									"parameters": {
+										"object": "LaserBlast",
+										"layer": "1",
+										"image-point": "2",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "LaserBlast",
+									"sid": 329925499584174,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "270"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "LaserBlast",
+									"sid": 320658694238852,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 123847475735154
+						}
+					],
+					"sid": 244628493786463
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Movement",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 556040336798285,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 955109131260117,
+									"parameters": {
+										"key": 38
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "ING875",
+									"sid": 109588315121147,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "up"
+									}
+								}
+							],
+							"sid": 719002102459337,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 320970463883776,
+									"parameters": {
+										"key": 65
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 663638746131181,
+									"parameters": {
+										"key": 37
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "ING875",
+									"sid": 962789644531326,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 691316451088438,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 133553521528978,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 471425143788348,
+									"parameters": {
+										"key": 40
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "ING875",
+									"sid": 402780353297259,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								}
+							],
+							"sid": 665484610570870,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 971309202418080,
+									"parameters": {
+										"key": 68
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 579400365850118,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "ING875",
+									"sid": 510990673458883,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 359931807922611,
+							"isOrBlock": true
+						}
+					],
+					"sid": 179288215940905
+				}
+			],
+			"sid": 947446233607849
 		}
 	],
 	"sid": 693809518147746

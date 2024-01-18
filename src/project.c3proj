@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -22,8 +29,22 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -38,13 +59,36 @@
 	"uniqueId": "ahgj6afwa67",
 	"objectTypes": {
 		"items": [
-			"Background",
-			"StartAnimation",
-			"FirstStartAnimation",
-			"Sprite",
-			"Keyboard"
+			"ING875",
+			"Keyboard",
+			"LaserBlast",
+			"Rockets"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"Background"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"FirstStartAnimation",
+							"StartAnimation"
+						],
+						"subfolders": [],
+						"name": "Splashes"
+					}
+				],
+				"name": "Backgrounds"
+			},
+			{
+				"items": [
+					"CommSystem"
+				],
+				"subfolders": [],
+				"name": "UX"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],

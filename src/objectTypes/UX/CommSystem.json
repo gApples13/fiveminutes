@@ -1,0 +1,50 @@
+{
+	"name": "CommSystem",
+	"plugin-id": "Sprite",
+	"sid": 526702662369026,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 157,
+						"height": 31,
+						"originX": 0,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1604270,
+						"collisionPoly": {
+							"points": [
+								0.006369426751592357,
+								0.03225806451612903,
+								0.9936305732484076,
+								0.03225806451612903,
+								0.9936305732484076,
+								0.967741935483871,
+								0.006369426751592357,
+								0.967741935483871
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 145116064876636,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,5 +1,5 @@
 {
-	"name": "Sprite",
+	"name": "ING875",
 	"plugin-id": "Sprite",
 	"sid": 674596498384047,
 	"isGlobal": false,
@@ -55,6 +55,18 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Fire Point A",
+								"x": 0.35714285714285715,
+								"y": 0.125
+							},
+							{
+								"name": "Fire Point B",
+								"x": 0.6428571428571429,
+								"y": 0.125
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					}
