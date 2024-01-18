@@ -25,7 +25,7 @@
 			"eventType": "variable",
 			"name": "PlayingBootupAnimations",
 			"type": "boolean",
-			"initialValue": "false",
+			"initialValue": "true",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -64,6 +64,15 @@
 						"width-type": "no",
 						"height-type": "no",
 						"z": false
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 395069914480701,
+					"parameters": {
+						"group-name": "\"ShipControl\"",
+						"state": "deactivated"
 					}
 				}
 			],
@@ -344,6 +353,11 @@
 									"parameters": {
 										"variable": "BootAnimationFinished"
 									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 108536397690283
 								}
 							],
 							"actions": [
@@ -396,43 +410,72 @@
 										"variable": "SplashScreenFinished",
 										"value": "true"
 									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 824101902582303,
+									"parameters": {
+										"group-name": "\"ShipControl\"",
+										"state": "activated"
+									}
 								}
 							],
-							"sid": 368038935841039,
-							"children": [
+							"sid": 368038935841039
+						},
+						{
+							"eventType": "block",
+							"conditions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "repeat",
-											"objectClass": "System",
-											"sid": 987613970217821,
-											"parameters": {
-												"count": "10"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-opacity",
-											"objectClass": "StartAnimation",
-											"sid": 895075766463960,
-											"parameters": {
-												"opacity": "StartAnimation.Opacity - 10"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 198369316675438,
-											"parameters": {
-												"seconds": "0.5"
-											}
-										}
-									],
-									"sid": 299363092078331
+									"id": "while",
+									"objectClass": "System",
+									"sid": 313383255297554
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "StartAnimation",
+									"sid": 434509062269466,
+									"parameters": {
+										"comparison": 4,
+										"opacity": "0"
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 824670064328821,
+									"parameters": {
+										"interval-seconds": ".1"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 245240594289627,
+									"parameters": {
+										"variable": "SplashScreenFinished"
+									}
 								}
-							]
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "StartAnimation",
+									"sid": 156457132530188,
+									"parameters": {
+										"opacity": "StartAnimation.Opacity - 10"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 699254315267402,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								}
+							],
+							"sid": 938394524577857
 						}
 					],
 					"sid": 375322507755791
