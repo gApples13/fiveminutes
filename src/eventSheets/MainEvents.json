@@ -451,7 +451,7 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 245240594289627,
+									"sid": 674430917188784,
 									"parameters": {
 										"variable": "SplashScreenFinished"
 									}
@@ -465,17 +465,42 @@
 									"parameters": {
 										"opacity": "StartAnimation.Opacity - 10"
 									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 699254315267402,
-									"parameters": {
-										"seconds": "0.5"
-									}
 								}
 							],
 							"sid": 938394524577857
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-opacity",
+									"objectClass": "StartAnimation",
+									"sid": 990144456708820,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 587214019144772,
+									"parameters": {
+										"seconds": "1.5"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Outlines",
+									"sid": 714473772291007,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 153403077734319
 						}
 					],
 					"sid": 375322507755791
