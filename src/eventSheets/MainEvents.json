@@ -42,6 +42,36 @@
 			"sid": 638426346677764
 		},
 		{
+			"eventType": "variable",
+			"name": "isReady",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 236922506849297
+		},
+		{
+			"eventType": "variable",
+			"name": "TutorialStage",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 755679277708798
+		},
+		{
+			"eventType": "variable",
+			"name": "isCruiseMode",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 536348605965470
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -206,16 +236,20 @@
 					],
 					"actions": [
 						{
-							"id": "reset-global-variables",
-							"objectClass": "System",
-							"sid": 382607340419470
-						},
-						{
 							"id": "set-text",
 							"objectClass": "Dialogue",
 							"sid": 135705612269229,
 							"parameters": {
 								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 609017762713177,
+							"parameters": {
+								"group-name": "\"ShipControl\"",
+								"state": "deactivated"
 							}
 						}
 					],
@@ -238,6 +272,18 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 689503241286979,
+									"parameters": {
+										"audio-file": "pinknoise",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"pinknoise\""
+									}
+								},
 								{
 									"id": "set-visible",
 									"objectClass": "FirstStartAnimation",
@@ -271,9 +317,66 @@
 										"animation": "\"Crosshairs\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 404062559897202,
+									"parameters": {
+										"tag": "\"pinknoise\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 433964568487621,
+									"parameters": {
+										"audio-file": "beepbooooooon",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"bipboon\""
+									}
 								}
 							],
 							"sid": 743971254642565
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "FirstStartAnimation",
+									"sid": 202416643963393,
+									"parameters": {
+										"comparison": 0,
+										"number": "77"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 907681773602143,
+									"parameters": {
+										"tag": "\"bipboon\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 808717386706648,
+									"parameters": {
+										"audio-file": "dingdong",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 459323438052381
 						},
 						{
 							"eventType": "block",
@@ -303,6 +406,18 @@
 									"parameters": {
 										"animation": "\"ComputerText\"",
 										"from": "beginning"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 121736032077661,
+									"parameters": {
+										"audio-file": "hahaoldcomputergobrrrrrrrr",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"computer\""
 									}
 								}
 							],
@@ -337,6 +452,11 @@
 									"parameters": {
 										"visibility": "invisible"
 									}
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 813476691591676
 								}
 							],
 							"sid": 883390793425442
@@ -375,6 +495,18 @@
 									"sid": 810863796694125,
 									"parameters": {
 										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 768676905663361,
+									"parameters": {
+										"audio-file": "bop",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
 									}
 								},
 								{
@@ -417,15 +549,6 @@
 									"parameters": {
 										"variable": "SplashScreenFinished",
 										"value": "true"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 824101902582303,
-									"parameters": {
-										"group-name": "\"ShipControl\"",
-										"state": "activated"
 									}
 								}
 							],
@@ -506,6 +629,15 @@
 									"parameters": {
 										"visibility": "invisible"
 									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 111011275120035,
+									"parameters": {
+										"variable": "isReady",
+										"value": "true"
+									}
 								}
 							],
 							"sid": 153403077734319
@@ -515,15 +647,6 @@
 				}
 			],
 			"sid": 725941318996752
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Tutorial",
-			"description": "Tutors",
-			"isActiveOnStart": true,
-			"children": [],
-			"sid": 731984112143483
 		},
 		{
 			"eventType": "group",
@@ -545,12 +668,12 @@
 								{
 									"id": "while",
 									"objectClass": "System",
-									"sid": 539281772673271
+									"sid": 448447893650072
 								},
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 935056001638120,
+									"sid": 420152373052074,
 									"parameters": {
 										"key": 32
 									}
@@ -558,7 +681,7 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 406713359031840,
+									"sid": 378007337104331,
 									"parameters": {
 										"interval-seconds": ".25"
 									}
@@ -568,7 +691,7 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "ING875",
-									"sid": 136928154689332,
+									"sid": 622818950128617,
 									"parameters": {
 										"object": "LaserBlast",
 										"layer": "1",
@@ -579,7 +702,7 @@
 								{
 									"id": "set-angle-of-motion",
 									"objectClass": "LaserBlast",
-									"sid": 719636550097528,
+									"sid": 969028994644001,
 									"behaviorType": "Bullet",
 									"parameters": {
 										"angle": "270"
@@ -588,13 +711,13 @@
 								{
 									"id": "set-visible",
 									"objectClass": "LaserBlast",
-									"sid": 863482641797794,
+									"sid": 356483990053949,
 									"parameters": {
 										"visibility": "visible"
 									}
 								}
 							],
-							"sid": 209033847450550
+							"sid": 605931648126348
 						},
 						{
 							"eventType": "block",
@@ -602,12 +725,12 @@
 								{
 									"id": "while",
 									"objectClass": "System",
-									"sid": 975170943664214
+									"sid": 247367933784910
 								},
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 507671797075619,
+									"sid": 511478661933307,
 									"parameters": {
 										"key": 32
 									}
@@ -615,7 +738,7 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 729575786604093,
+									"sid": 904798521607256,
 									"parameters": {
 										"interval-seconds": ".25"
 									}
@@ -625,7 +748,7 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "ING875",
-									"sid": 606071963960165,
+									"sid": 763804775219000,
 									"parameters": {
 										"object": "LaserBlast",
 										"layer": "1",
@@ -636,7 +759,7 @@
 								{
 									"id": "set-angle-of-motion",
 									"objectClass": "LaserBlast",
-									"sid": 329925499584174,
+									"sid": 540406264095928,
 									"behaviorType": "Bullet",
 									"parameters": {
 										"angle": "270"
@@ -645,16 +768,16 @@
 								{
 									"id": "set-visible",
 									"objectClass": "LaserBlast",
-									"sid": 320658694238852,
+									"sid": 974760810961268,
 									"parameters": {
 										"visibility": "visible"
 									}
 								}
 							],
-							"sid": 123847475735154
+							"sid": 528251624866868
 						}
 					],
-					"sid": 244628493786463
+					"sid": 756079889477725
 				},
 				{
 					"eventType": "group",
@@ -669,7 +792,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 556040336798285,
+									"sid": 725840744296816,
 									"parameters": {
 										"key": 87
 									}
@@ -677,7 +800,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 955109131260117,
+									"sid": 332594170007420,
 									"parameters": {
 										"key": 38
 									}
@@ -687,14 +810,14 @@
 								{
 									"id": "simulate-control",
 									"objectClass": "ING875",
-									"sid": 109588315121147,
+									"sid": 783227026007389,
 									"behaviorType": "8Direction",
 									"parameters": {
 										"control": "up"
 									}
 								}
 							],
-							"sid": 719002102459337,
+							"sid": 201573126155395,
 							"isOrBlock": true
 						},
 						{
@@ -703,7 +826,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 320970463883776,
+									"sid": 842316453332590,
 									"parameters": {
 										"key": 65
 									}
@@ -711,7 +834,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 663638746131181,
+									"sid": 889097308657197,
 									"parameters": {
 										"key": 37
 									}
@@ -721,14 +844,14 @@
 								{
 									"id": "simulate-control",
 									"objectClass": "ING875",
-									"sid": 962789644531326,
+									"sid": 835504904886172,
 									"behaviorType": "8Direction",
 									"parameters": {
 										"control": "left"
 									}
 								}
 							],
-							"sid": 691316451088438,
+							"sid": 671667648465212,
 							"isOrBlock": true
 						},
 						{
@@ -737,7 +860,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 133553521528978,
+									"sid": 277339379881339,
 									"parameters": {
 										"key": 83
 									}
@@ -745,7 +868,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 471425143788348,
+									"sid": 912157650781446,
 									"parameters": {
 										"key": 40
 									}
@@ -755,14 +878,14 @@
 								{
 									"id": "simulate-control",
 									"objectClass": "ING875",
-									"sid": 402780353297259,
+									"sid": 271145310348339,
 									"behaviorType": "8Direction",
 									"parameters": {
 										"control": "down"
 									}
 								}
 							],
-							"sid": 665484610570870,
+							"sid": 355957371430815,
 							"isOrBlock": true
 						},
 						{
@@ -771,7 +894,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 971309202418080,
+									"sid": 530022961513594,
 									"parameters": {
 										"key": 68
 									}
@@ -779,7 +902,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 579400365850118,
+									"sid": 613089848519149,
 									"parameters": {
 										"key": 39
 									}
@@ -789,21 +912,734 @@
 								{
 									"id": "simulate-control",
 									"objectClass": "ING875",
-									"sid": 510990673458883,
+									"sid": 697880032286440,
 									"behaviorType": "8Direction",
 									"parameters": {
 										"control": "right"
 									}
 								}
 							],
-							"sid": 359931807922611,
+							"sid": 636073650010700,
 							"isOrBlock": true
 						}
 					],
-					"sid": 179288215940905
+					"sid": 518450452554098
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 753360283750270,
+							"parameters": {
+								"variable": "isCruiseMode"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 215948426044377,
+							"parameters": {
+								"group-name": "\"Combat\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 756012768207701,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 595340598378672,
+									"parameters": {
+										"key": 32
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Error",
+									"sid": 302051538042844,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 673587308704813,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Error",
+									"sid": 613834206988307,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 914620355926188
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 293261445202735
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 208280231023392,
+							"parameters": {
+								"group-name": "\"Combat\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 683922007999760
 				}
 			],
-			"sid": 947446233607849
+			"sid": 332428161563101
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Tutorial",
+			"description": "Tutors",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 657338843490775,
+							"parameters": {
+								"variable": "isReady"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 199064192975174
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 153719801619713,
+							"parameters": {
+								"seconds": "2.0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "CommSystem",
+							"sid": 685614568950377,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TalkingHeads",
+							"sid": 983032461481305,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 573516189875959,
+							"parameters": {
+								"animation": "\"Stanley\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 110407892387214,
+							"parameters": {
+								"text": "\"Ok. Now that you’re behind the wheel, I’ll take control remotely and show you how to fly.\"",
+								"duration": "3"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 694217988365749,
+							"parameters": {
+								"seconds": "4"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 105922365555957,
+							"parameters": {
+								"animation": "\"Ryan\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 660183334161254,
+							"parameters": {
+								"text": "\"You can’t take remote control with the 875 series.\"",
+								"duration": "3"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 709320766007696,
+							"parameters": {
+								"seconds": "4"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 794656181461163,
+							"parameters": {
+								"animation": "\"Stanley\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 772351833695620,
+							"parameters": {
+								"text": "\"The 700s could...\"",
+								"duration": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 253124371842034,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 953276791478038,
+							"parameters": {
+								"animation": "\"Ryan\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 207552732584777,
+							"parameters": {
+								"text": "\"Well maybe we could afford more 700’s if we had the budget but\"",
+								"duration": "3"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 685890428816982,
+							"parameters": {
+								"seconds": "3.5"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 265107360721526,
+							"parameters": {
+								"animation": "\"Stanley\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 441836666614558,
+							"parameters": {
+								"text": "\"Doctor, if you have a complaint about the budget, then take it up with the Admiral. But don’t get on my ass about it.\"\n",
+								"duration": "5"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 747035556262758,
+							"parameters": {
+								"seconds": "6"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 953437247353196,
+							"parameters": {
+								"text": "\"Ok. I’ll just tell you what to do. To move right, you have to think about moving right.\"",
+								"duration": "3"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 270917155999694,
+							"parameters": {
+								"seconds": "4"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 814518249436845,
+							"parameters": {
+								"text": "\"Need some help visualizing? Imagine pressing the right arrow key or D key on a computer keyboard.\"",
+								"duration": "3"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 553377520067249,
+							"parameters": {
+								"group-name": "\"ShipControl\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 727563661814642,
+							"parameters": {
+								"group-name": "\"Combat\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 884506846163443,
+							"parameters": {
+								"variable": "TutorialStage",
+								"value": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 278431097312586,
+							"parameters": {
+								"seconds": "3.5"
+							}
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 823407540187043
+						}
+					],
+					"sid": 784355798205581
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 335142246593204,
+							"parameters": {
+								"key": 68
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 326868999895064,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [],
+					"sid": 393896147805255,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 358356297967638
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 707066873410597,
+									"parameters": {
+										"variable": "TutorialStage",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 317316732705778,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 303440658083044,
+									"parameters": {
+										"text": "\"Excellent work, Private. Now try pressing the left arrow key or the A key on your keyboard.\"",
+										"duration": "3"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 436846238417787,
+									"parameters": {
+										"seconds": "3.5"
+									}
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 547146760417956
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 197040469274976,
+									"parameters": {
+										"variable": "TutorialStage",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 895420012569294
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 477009375047614,
+							"parameters": {
+								"key": 65
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 439433361643319,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [],
+					"sid": 319149434228810,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 186485027869779
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 634391764664394,
+									"parameters": {
+										"variable": "TutorialStage",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 663292039023451,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 490978178912311,
+									"parameters": {
+										"text": "\"You’re better than most of our recruits, I must say. Now to move forward or decelerate, press the W and S, or Up and Down keys or your keyboard.\"",
+										"duration": "4"
+									}
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 540865644718138
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 514171845959397,
+									"parameters": {
+										"variable": "TutorialStage",
+										"value": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 804302524686032,
+									"parameters": {
+										"seconds": "4.6"
+									}
+								}
+							],
+							"sid": 259774978194826
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 256225051630844,
+							"parameters": {
+								"key": 87
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 753765572075604,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 916889565926305,
+							"parameters": {
+								"key": 83
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 244491331199518,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [],
+					"sid": 987814926242714,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 964130172051581
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 423292849916132,
+									"parameters": {
+										"variable": "TutorialStage",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 936109089426367,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 197653926214654,
+									"parameters": {
+										"text": "\"Great job following directions, Private. You’re a natural! Now, press space to fire your weapons.\"",
+										"duration": "4"
+									}
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 424972840852866
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 144108731228056,
+									"parameters": {
+										"variable": "TutorialStage",
+										"value": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 230801478868106,
+									"parameters": {
+										"seconds": "4.5"
+									}
+								}
+							],
+							"sid": 457920627973804
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 734032882042820,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [],
+					"sid": 510413357495703,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 929993026756029
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 444475797906623,
+									"parameters": {
+										"variable": "TutorialStage",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 256148425813824,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 326472867946116,
+									"parameters": {
+										"text": "\"You might have noticed that the weapons are switched off right now. They use a lot of energy. They’ll be activated when you switch to combat configuration.\"",
+										"duration": "5"
+									}
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 626743301538668
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 841444100130250,
+									"parameters": {
+										"variable": "TutorialStage",
+										"value": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 791085124028864,
+									"parameters": {
+										"seconds": "5.5"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 312772053729502,
+									"parameters": {
+										"variable": "Level",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 346328244910390
+						}
+					],
+					"isOrBlock": true
+				}
+			],
+			"sid": 731984112143483
 		}
 	],
 	"sid": 693809518147746

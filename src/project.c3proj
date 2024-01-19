@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -71,7 +78,9 @@
 			"LaserBlast",
 			"Rockets",
 			"TalkingHeads",
-			"Dialogue"
+			"Dialogue",
+			"Audio",
+			"Error"
 		],
 		"subfolders": [
 			{
@@ -124,7 +133,56 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "pinknoise.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 294438817948920,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "beepbooooooon.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 112464158536938,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "dingdong.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 674194384977476,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "hahaoldcomputergobrrrrrrrr.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 627972043301793,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 783194668714061,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "weeoooweeooo.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 269460224707808,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
