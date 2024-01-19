@@ -209,6 +209,14 @@
 							"id": "reset-global-variables",
 							"objectClass": "System",
 							"sid": 382607340419470
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Dialogue",
+							"sid": 135705612269229,
+							"parameters": {
+								"text": "\"\""
+							}
 						}
 					],
 					"sid": 835207958396966

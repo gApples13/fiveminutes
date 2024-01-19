@@ -28,6 +28,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
@@ -62,7 +69,9 @@
 			"ING875",
 			"Keyboard",
 			"LaserBlast",
-			"Rockets"
+			"Rockets",
+			"TalkingHeads",
+			"Dialogue"
 		],
 		"subfolders": [
 			{
