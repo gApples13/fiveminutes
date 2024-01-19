@@ -22,6 +22,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Particles",
 			"name": "Particles",
 			"author": "Scirra",
@@ -73,14 +80,10 @@
 	"uniqueId": "ahgj6afwa67",
 	"objectTypes": {
 		"items": [
-			"ING875",
 			"Keyboard",
-			"LaserBlast",
-			"Rockets",
-			"TalkingHeads",
-			"Dialogue",
 			"Audio",
-			"Error"
+			"Mouse",
+			"OpeningCredits"
 		],
 		"subfolders": [
 			{
@@ -102,10 +105,26 @@
 			{
 				"items": [
 					"CommSystem",
-					"Outlines"
+					"Outlines",
+					"Error",
+					"TalkingHeads",
+					"Autolaunch",
+					"Dialogue",
+					"commsBG",
+					"Hider"
 				],
 				"subfolders": [],
 				"name": "UX"
+			},
+			{
+				"items": [
+					"ING875",
+					"LaserBlast",
+					"RocketPiss",
+					"Rockets"
+				],
+				"subfolders": [],
+				"name": "Game"
 			}
 		]
 	},
@@ -178,6 +197,46 @@
 					"name": "weeoooweeooo.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 269460224707808,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "fan.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 440213030123415,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Dingdingdingding.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 482263554968719,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "startup.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 140914174901485,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "jetloop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 525810301674968,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "tchaikovsky.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 858550129645971,
 					"file-info": {
 						"purpose": "none"
 					}

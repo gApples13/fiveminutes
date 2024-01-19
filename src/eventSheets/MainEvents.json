@@ -72,6 +72,322 @@
 			"sid": 536348605965470
 		},
 		{
+			"eventType": "variable",
+			"name": "isInSpace",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 873615043788341
+		},
+		{
+			"eventType": "comment",
+			"text": "Construct has functions?!??!?!?!?!? This is fabulous!!!! (Imagine me saying that in the fruitiest way possible)"
+		},
+		{
+			"functionName": "PlayDialogue",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Character",
+					"type": "string",
+					"initialValue": "",
+					"comment": "Character Name (String)",
+					"sid": 627909069745321
+				},
+				{
+					"name": "TextToPlay",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 284789738843994
+				},
+				{
+					"name": "Length",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Length (Seconds)",
+					"sid": 259757016410587
+				},
+				{
+					"name": "HangTime",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Pause after text finishes.",
+					"sid": 117587817010687
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Same as it ever was...."
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "TalkingHeads",
+					"sid": 436323830769820,
+					"parameters": {
+						"animation": "Character",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "Dialogue",
+					"sid": 898780640972314,
+					"parameters": {
+						"text": "TextToPlay",
+						"duration": "Length"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 809500336520044,
+					"parameters": {
+						"seconds": "Length + HangTime"
+					}
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "TalkingHeads",
+					"sid": 819315408142650
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "TalkingHeads",
+					"sid": 176599637917049,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 528792146306699,
+					"parameters": {
+						"tag": "\"textDone\""
+					}
+				}
+			],
+			"sid": 334187484001409
+		},
+		{
+			"functionName": "HideText",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "CommSystem",
+					"sid": 943717992805701,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "TalkingHeads",
+					"sid": 243520118032792,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "commsBG",
+					"sid": 845228313224338,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Dialogue",
+					"sid": 901748198675929,
+					"parameters": {
+						"text": "\"\""
+					}
+				}
+			],
+			"sid": 631062451384161
+		},
+		{
+			"functionName": "ShowText",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "CommSystem",
+					"sid": 308179716960953,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "TalkingHeads",
+					"sid": 697642054466784,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "commsBG",
+					"sid": 876599635046638,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 137353530811828
+		},
+		{
+			"functionName": "Launch",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Hider",
+					"sid": 119912662209041,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 569383901279728
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 395579490338955,
+					"parameters": {
+						"audio-file": "weeoooweeooo",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 729794287767964,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Background",
+					"sid": 543177452125643,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "RocketPiss",
+					"sid": 840566469162997,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Autolaunch",
+					"sid": 597605485396291,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Rockets",
+					"sid": 390148857785754,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ING875",
+					"sid": 967379468046038,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 196812136217373,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 839401987175866,
+					"parameters": {
+						"variable": "isInSpace",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Hider",
+					"sid": 934168082313007,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 645319553638406,
+					"parameters": {
+						"audio-file": "jetloop",
+						"loop": "looping",
+						"volume": "-15",
+						"stereo-pan": "0",
+						"tag-optional": "\"jets\""
+					}
+				}
+			],
+			"sid": 358028386186544
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -103,6 +419,40 @@
 					"parameters": {
 						"group-name": "\"ShipControl\"",
 						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 877350917384227,
+					"parameters": {
+						"group-name": "\"Tutorial\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 567942606742614,
+					"parameters": {
+						"group-name": "\"Level1\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "RocketPiss",
+					"sid": 698868472975550,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Autolaunch",
+					"sid": 616604071311631,
+					"parameters": {
+						"visibility": "invisible"
 					}
 				}
 			],
@@ -158,6 +508,148 @@
 				}
 			],
 			"sid": 707305248325983
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 742112379706064,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Autolaunch"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Autolaunch",
+					"sid": 727507691150622,
+					"parameters": {
+						"instance-variable": "State",
+						"comparison": 0,
+						"value": "\"off\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Autolaunch",
+					"sid": 940246726343245,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 870242568182824,
+					"parameters": {
+						"audio-file": "Dingdingdingding",
+						"loop": "looping",
+						"volume": "-20",
+						"stereo-pan": "0",
+						"tag-optional": "\"ding\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 959658891715573,
+					"parameters": {
+						"audio-file": "startup",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"jetStart\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 638002625906036,
+					"parameters": {
+						"seconds": ".8"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Autolaunch",
+					"sid": 202350895843437,
+					"parameters": {
+						"instance-variable": "State",
+						"value": "\"engaged\""
+					}
+				}
+			],
+			"sid": 353861849279298
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-ended",
+					"objectClass": "Audio",
+					"sid": 494767851884058,
+					"parameters": {
+						"tag": "\"jetStart\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 363513111120330,
+					"parameters": {
+						"audio-file": "jetloop",
+						"loop": "looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"jets\""
+					}
+				}
+			],
+			"sid": 512721786762632
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 284751063220770,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Autolaunch"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Autolaunch",
+					"sid": 491081857896227,
+					"parameters": {
+						"instance-variable": "State",
+						"comparison": 0,
+						"value": "\"engaged\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 701020397516243
+				},
+				{
+					"callFunction": "Launch",
+					"sid": 818637081009845
+				}
+			],
+			"sid": 654061315530937
 		},
 		{
 			"eventType": "group",
@@ -352,6 +844,11 @@
 										"comparison": 0,
 										"number": "77"
 									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 786353691101256
 								}
 							],
 							"actions": [
@@ -366,11 +863,11 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 808717386706648,
+									"sid": 106461318924966,
 									"parameters": {
 										"audio-file": "dingdong",
 										"loop": "not-looping",
-										"volume": "0",
+										"volume": "-5",
 										"stereo-pan": "0",
 										"tag-optional": "\"\""
 									}
@@ -394,9 +891,9 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 217986040198508,
+									"sid": 571258147167705,
 									"parameters": {
-										"seconds": "2.0"
+										"seconds": ".8"
 									}
 								},
 								{
@@ -507,6 +1004,18 @@
 										"volume": "0",
 										"stereo-pan": "0",
 										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 637424990840828,
+									"parameters": {
+										"audio-file": "fan",
+										"loop": "looping",
+										"volume": "-8",
+										"stereo-pan": "0",
+										"tag-optional": "\"fan\""
 									}
 								},
 								{
@@ -972,6 +1481,18 @@
 									}
 								},
 								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 880889034218392,
+									"parameters": {
+										"audio-file": "weeoooweeooo",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
 									"sid": 673587308704813,
@@ -1030,7 +1551,7 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 657338843490775,
+							"sid": 353636748272230,
 							"parameters": {
 								"variable": "isReady"
 							}
@@ -1038,7 +1559,883 @@
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 199064192975174
+							"sid": 696201758935953
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Yep, of course I wrote all this delicous spaghetti before finding out that there was a much easier way to do all of it. Game development is a learning experience I guess........"
+						},
+						{
+							"type": "comment",
+							"text": "No, I can't spell delicouse. I won't even let autocorrect fix me. We are not friends."
+						},
+						{
+							"type": "comment",
+							"text": "And of course, I'm going to leave the spaghetti here until the next branch. It would be way too difficult to retrofit all the code now. Our deadline is SWIFTLY approaching and we don't have that much time."
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 527112372772516,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "CommSystem",
+							"sid": 714481277732805,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "commsBG",
+							"sid": 145991057174419,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TalkingHeads",
+							"sid": 255457784311704,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 401366105898377,
+							"parameters": {
+								"animation": "\"Stanley\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 147126140576418,
+							"parameters": {
+								"text": "\"Hello? Hello? God dammit, they’ve passed out. Alright, take them out of there.\"",
+								"duration": "3"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 271140924087798,
+							"parameters": {
+								"seconds": "4"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 111232628322950,
+							"parameters": {
+								"animation": "\"Ryan\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 813585690498217,
+							"parameters": {
+								"text": "\"No, no, their vitals are normal.\"",
+								"duration": "2"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 459905531621540,
+							"parameters": {
+								"seconds": "3"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 433495626492739,
+							"parameters": {
+								"animation": "\"Stanley\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 232007229265728,
+							"parameters": {
+								"text": "\"Oh well keep them in there! Are you there, Private? What’s going on?\"",
+								"duration": "3"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 418074457970120,
+							"parameters": {
+								"seconds": "4"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 833891223494305,
+							"parameters": {
+								"animation": "\"Ryan\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 266917796548051,
+							"parameters": {
+								"text": "\"It’s possible they can’t talk while their brain is linked to the system. We haven’t quite ironed out the BCI yet.\"",
+								"duration": "4"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 894522438662745,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 921673973490553,
+							"parameters": {
+								"animation": "\"Stanley\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 788030741903701,
+							"parameters": {
+								"text": "\"Can they hear me?\"",
+								"duration": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 645981450267997,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 221226054118473,
+							"parameters": {
+								"animation": "\"Ryan\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 213468236370688,
+							"parameters": {
+								"text": "\"I don’t know, just tell them to do something. Maybe they’ll listen.\"",
+								"duration": "3"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 992571752861540,
+							"parameters": {
+								"seconds": "4"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 135861755634342,
+							"parameters": {
+								"animation": "\"Stanley\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 665691798229156,
+							"parameters": {
+								"text": "\"You don’t listen when I tell you to do something. What makes you so sure they’re different?\"",
+								"duration": "4"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 790832791644539,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 573520189711929,
+							"parameters": {
+								"animation": "\"Stanley\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Dialogue",
+							"sid": 300579107866231,
+							"parameters": {
+								"text": "\"Private, if you’re there, engage autolaunch.\"",
+								"duration": "3"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Autolaunch",
+							"sid": 371541064287216,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 554379391067654,
+							"parameters": {
+								"seconds": "4"
+							}
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "TalkingHeads",
+							"sid": 559045437761740
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 356563384612493,
+							"parameters": {
+								"seconds": "6"
+							}
+						}
+					],
+					"sid": 505813118226904,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Autolaunch",
+									"sid": 621924944052200,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"off\""
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 166459303825337
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 935277167123384,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 824310140408984,
+									"parameters": {
+										"text": "\"That’s the only thing on the screen.\"",
+										"duration": "2"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 633948501389507,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 984700189265902
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 611171857211875,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 484267224380186,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 806384814867825,
+									"parameters": {
+										"text": "\"Press autolaunch.\"",
+										"duration": ".8"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 118664170689302,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 749488419381279
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 373859272235796,
+									"parameters": {
+										"seconds": "4"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 786673803780982,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 157068529263466,
+									"parameters": {
+										"text": "\"Are you sure they’re awake?\"",
+										"duration": "2"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 393776512121962,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 190700308827949,
+									"parameters": {
+										"animation": "\"Ryan\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 627239670623160,
+									"parameters": {
+										"text": "\"Yeah, pretty sure…\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 258060305515707,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 363529915357721,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 248638711305683,
+									"parameters": {
+										"text": "\"Pretty sure?\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 472815583567600,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 347459716371287,
+									"parameters": {
+										"animation": "\"Ryan\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 843141409130808,
+									"parameters": {
+										"text": "\"What do you want from me?\"",
+										"duration": "2"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 129244180122684,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 170912575436491,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 283479824849659,
+									"parameters": {
+										"text": "\"A yes or no would be nice!\"",
+										"duration": "1.5"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 197699780479109,
+									"parameters": {
+										"seconds": "2.5"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 659021384900113,
+									"parameters": {
+										"animation": "\"Ryan\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 361386494984236,
+									"parameters": {
+										"text": "\"Well, major, sometimes you can’t be that certain\"",
+										"duration": "3"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 789784020300221,
+									"parameters": {
+										"seconds": "3.3"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 471772801556726,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 858682941855014,
+									"parameters": {
+										"text": "\"Are you talking back to me, Doctor!?\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 677096775953935,
+									"parameters": {
+										"seconds": "1.7"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 218433754855656,
+									"parameters": {
+										"animation": "\"Ryan\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 623826595116968,
+									"parameters": {
+										"text": "\"That’s how fucking conversation works, Major. Would you rather I say nothing?\"",
+										"duration": "2"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 917190476134326,
+									"parameters": {
+										"seconds": "2.8"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 139624593762564,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 984515042792360,
+									"parameters": {
+										"text": "\"I WOULD RATHER GET A YES OR NO!\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 776752479118897,
+									"parameters": {
+										"seconds": "1.7"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 947722998186477,
+									"parameters": {
+										"animation": "\"Ryan\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 876064863000444,
+									"parameters": {
+										"text": "\"YES! HE’S FUCKING AWAKE!\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 405883462139671,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 297614005042789,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 819058938948953,
+									"parameters": {
+										"text": "\"Thank you...\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 253654253880501,
+									"parameters": {
+										"seconds": "1.7"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 168160682855850,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 450477196267360,
+									"parameters": {
+										"text": "\"Jesus.\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 585004677242327,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 736525607760484,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 684182613366964,
+									"parameters": {
+										"text": "\"Sorry for yelling.\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 496016803074079,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 182808319784410,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 974882571936307,
+									"parameters": {
+										"text": "\"So anyway, private, did you push autolaunch yet?\"",
+										"duration": "2"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 485097014644312,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 724608135840529,
+									"parameters": {
+										"animation": "\"Stanley\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Dialogue",
+									"sid": 251848121953101,
+									"parameters": {
+										"text": "\"You didn’t? Why do we even train these kids?\"",
+										"duration": "2"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 612291787353168,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"callFunction": "HideText",
+									"sid": 902924941179438
+								}
+							],
+							"sid": 416997536484299
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Autolaunch",
+							"sid": 666205180760074,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"engaged\""
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 976045060156088
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ShowText",
+							"sid": 657640087413455
+						},
+						{
+							"callFunction": "PlayDialogue",
+							"sid": 160400588274158,
+							"parameters": [
+								"\"Stanley\"",
+								"\"Alright, good, you’ve proven that you can follow instructions and you’ve proven that you can push a button.\"",
+								"4",
+								"1"
+							]
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 915176351807003,
+							"parameters": {
+								"tag": "\"textDone\""
+							}
+						},
+						{
+							"callFunction": "PlayDialogue",
+							"sid": 830534122235830,
+							"parameters": [
+								"\"Stanley\"",
+								"\"So, now that you’ve gotten your Ing-875 started up, allow me to introduce myself. You can call me Major General Stanley. I’ll be showing you the ropes of space combat today.\"",
+								"5",
+								"1"
+							]
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 221330374996943,
+							"parameters": {
+								"tag": "\"textDone\""
+							}
+						},
+						{
+							"callFunction": "PlayDialogue",
+							"sid": 574561451886462,
+							"parameters": [
+								"\"Stanley\"",
+								"\"Whenever you’re ready, press “launch now” on your screen.\"",
+								"3",
+								"1"
+							]
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 238207164118820,
+							"parameters": {
+								"tag": "\"textDone\""
+							}
+						},
+						{
+							"callFunction": "HideText",
+							"sid": 756752365800646
+						}
+					],
+					"sid": 130931611707934
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 875391711963444,
+							"parameters": {
+								"variable": "isInSpace"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 621253913119076
 						}
 					],
 					"actions": [
@@ -1051,20 +2448,8 @@
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "CommSystem",
-							"sid": 685614568950377,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "TalkingHeads",
-							"sid": 983032461481305,
-							"parameters": {
-								"visibility": "visible"
-							}
+							"callFunction": "ShowText",
+							"sid": 344617131473794
 						},
 						{
 							"id": "set-animation",
@@ -1416,11 +2801,6 @@
 									}
 								},
 								{
-									"id": "stop-animation",
-									"objectClass": "TalkingHeads",
-									"sid": 540865644718138
-								},
-								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
 									"sid": 514171845959397,
@@ -1436,6 +2816,11 @@
 									"parameters": {
 										"seconds": "4.6"
 									}
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 605879668476515
 								}
 							],
 							"sid": 259774978194826
@@ -1521,11 +2906,6 @@
 									}
 								},
 								{
-									"id": "stop-animation",
-									"objectClass": "TalkingHeads",
-									"sid": 424972840852866
-								},
-								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
 									"sid": 144108731228056,
@@ -1541,6 +2921,11 @@
 									"parameters": {
 										"seconds": "4.5"
 									}
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "TalkingHeads",
+									"sid": 182787714037078
 								}
 							],
 							"sid": 457920627973804
@@ -1602,11 +2987,6 @@
 									}
 								},
 								{
-									"id": "stop-animation",
-									"objectClass": "TalkingHeads",
-									"sid": 626743301538668
-								},
-								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
 									"sid": 841444100130250,
@@ -1624,9 +3004,49 @@
 									}
 								},
 								{
+									"callFunction": "PlayDialogue",
+									"sid": 130820401545532,
+									"parameters": [
+										"\"Stanley\"",
+										"\"In the meantime private. That's our training for today. If you want to play around with the ship a bit that's fine.\"",
+										"4",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 916333994250703,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 782015508450148,
+									"parameters": [
+										"\"Stanley\"",
+										"\"But, break anything and you're dead.\"",
+										"3",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 316118740673333,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "HideText",
+									"sid": 957145065443009
+								},
+								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 312772053729502,
+									"sid": 181400597300805,
 									"parameters": {
 										"variable": "Level",
 										"value": "1"
@@ -1640,6 +3060,195 @@
 				}
 			],
 			"sid": 731984112143483
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Level1",
+			"description": "First level. Time to fight Tekototamat",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Opening Credits",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 461673904733232
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "OpeningCredits",
+									"sid": 696503255351489,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 888493421255935,
+									"parameters": {
+										"audio-file": "tchaikovsky",
+										"loop": "not-looping",
+										"volume": "10",
+										"stereo-pan": "0",
+										"tag-optional": "\"waltz\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 756384744576016,
+									"parameters": {
+										"seconds": "5.3"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "OpeningCredits",
+									"sid": 149128280940158,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 466741672983168,
+									"parameters": {
+										"seconds": "7.9"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "OpeningCredits",
+									"sid": 828484379306632,
+									"parameters": {
+										"frame-number": "2"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 684244688622000,
+									"parameters": {
+										"seconds": "9"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "OpeningCredits",
+									"sid": 669353090298397,
+									"parameters": {
+										"frame-number": "3"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 428534006329681,
+									"parameters": {
+										"seconds": "8"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "OpeningCredits",
+									"sid": 668411354416604,
+									"parameters": {
+										"frame-number": "4"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 104963097365858,
+									"parameters": {
+										"seconds": "8"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "OpeningCredits",
+									"sid": 832828578518902,
+									"parameters": {
+										"frame-number": "5"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 726904117822573,
+									"parameters": {
+										"seconds": "17"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "OpeningCredits",
+									"sid": 166137388749272,
+									"parameters": {
+										"frame-number": "7"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 410097797669532,
+									"parameters": {
+										"seconds": "8"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "OpeningCredits",
+									"sid": 267690783899842,
+									"parameters": {
+										"frame-number": "9"
+									}
+								}
+							],
+							"sid": 139253775263982
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-ended",
+									"objectClass": "Audio",
+									"sid": 117536102260367,
+									"parameters": {
+										"tag": "\"waltz\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "OpeningCredits",
+									"sid": 518727282527364,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 267637649933304
+						}
+					],
+					"sid": 805465632267173
+				}
+			],
+			"sid": 539728109304676
 		}
 	],
 	"sid": 693809518147746
