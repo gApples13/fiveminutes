@@ -82,6 +82,16 @@
 			"sid": 873615043788341
 		},
 		{
+			"eventType": "variable",
+			"name": "IsCutSceneOver",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 345848541647889
+		},
+		{
 			"eventType": "comment",
 			"text": "Construct has functions?!??!?!?!?!? This is fabulous!!!! (Imagine me saying that in the fruitiest way possible)"
 		},
@@ -132,7 +142,7 @@
 				{
 					"id": "set-animation",
 					"objectClass": "TalkingHeads",
-					"sid": 436323830769820,
+					"sid": 494269283028067,
 					"parameters": {
 						"animation": "Character",
 						"from": "beginning"
@@ -141,7 +151,7 @@
 				{
 					"id": "typewriter-text",
 					"objectClass": "Dialogue",
-					"sid": 898780640972314,
+					"sid": 218532586119676,
 					"parameters": {
 						"text": "TextToPlay",
 						"duration": "Length"
@@ -150,7 +160,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 809500336520044,
+					"sid": 428318090949318,
 					"parameters": {
 						"seconds": "Length + HangTime"
 					}
@@ -158,12 +168,12 @@
 				{
 					"id": "stop-animation",
 					"objectClass": "TalkingHeads",
-					"sid": 819315408142650
+					"sid": 923134411735655
 				},
 				{
 					"id": "set-animation-frame",
 					"objectClass": "TalkingHeads",
-					"sid": 176599637917049,
+					"sid": 445591231219616,
 					"parameters": {
 						"frame-number": "0"
 					}
@@ -171,13 +181,13 @@
 				{
 					"id": "signal",
 					"objectClass": "System",
-					"sid": 528792146306699,
+					"sid": 645964622135569,
 					"parameters": {
 						"tag": "\"textDone\""
 					}
 				}
 			],
-			"sid": 334187484001409
+			"sid": 833097175168987
 		},
 		{
 			"functionName": "HideText",
@@ -193,7 +203,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "CommSystem",
-					"sid": 943717992805701,
+					"sid": 261282846003057,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -201,7 +211,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "TalkingHeads",
-					"sid": 243520118032792,
+					"sid": 500254294835176,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -209,7 +219,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "commsBG",
-					"sid": 845228313224338,
+					"sid": 365675214136905,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -217,13 +227,13 @@
 				{
 					"id": "set-text",
 					"objectClass": "Dialogue",
-					"sid": 901748198675929,
+					"sid": 631553317063026,
 					"parameters": {
 						"text": "\"\""
 					}
 				}
 			],
-			"sid": 631062451384161
+			"sid": 145080359847592
 		},
 		{
 			"functionName": "ShowText",
@@ -239,7 +249,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "CommSystem",
-					"sid": 308179716960953,
+					"sid": 434317766246488,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -247,7 +257,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "TalkingHeads",
-					"sid": 697642054466784,
+					"sid": 228433216241156,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -255,13 +265,13 @@
 				{
 					"id": "set-visible",
 					"objectClass": "commsBG",
-					"sid": 876599635046638,
+					"sid": 246073740865670,
 					"parameters": {
 						"visibility": "visible"
 					}
 				}
 			],
-			"sid": 137353530811828
+			"sid": 722593099644932
 		},
 		{
 			"functionName": "Launch",
@@ -277,7 +287,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "Hider",
-					"sid": 119912662209041,
+					"sid": 607037969334729,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -285,12 +295,12 @@
 				{
 					"id": "stop-all",
 					"objectClass": "Audio",
-					"sid": 569383901279728
+					"sid": 188619726094779
 				},
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 395579490338955,
+					"sid": 126481195253411,
 					"parameters": {
 						"audio-file": "weeoooweeooo",
 						"loop": "not-looping",
@@ -302,7 +312,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 729794287767964,
+					"sid": 282646825685519,
 					"parameters": {
 						"seconds": "2"
 					}
@@ -310,7 +320,7 @@
 				{
 					"id": "set-animation-frame",
 					"objectClass": "Background",
-					"sid": 543177452125643,
+					"sid": 253874550986945,
 					"parameters": {
 						"frame-number": "1"
 					}
@@ -318,7 +328,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "RocketPiss",
-					"sid": 840566469162997,
+					"sid": 820884980095109,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -326,7 +336,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "Autolaunch",
-					"sid": 597605485396291,
+					"sid": 483898964319543,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -334,7 +344,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "Rockets",
-					"sid": 390148857785754,
+					"sid": 239243621309910,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -342,7 +352,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "ING875",
-					"sid": 967379468046038,
+					"sid": 383845710641686,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -350,7 +360,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 196812136217373,
+					"sid": 762807565870510,
 					"parameters": {
 						"seconds": "5"
 					}
@@ -358,7 +368,7 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 839401987175866,
+					"sid": 239022323435811,
 					"parameters": {
 						"variable": "isInSpace",
 						"value": "true"
@@ -367,7 +377,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "Hider",
-					"sid": 934168082313007,
+					"sid": 318136422748964,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -375,281 +385,249 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 645319553638406,
+					"sid": 903660059455007,
 					"parameters": {
 						"audio-file": "jetloop",
-						"loop": "looping",
-						"volume": "-15",
-						"stereo-pan": "0",
-						"tag-optional": "\"jets\""
-					}
-				}
-			],
-			"sid": 358028386186544
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 717852909995582
-				}
-			],
-			"actions": [
-				{
-					"id": "pin-to-object-properties",
-					"objectClass": "Rockets",
-					"sid": 704751457323948,
-					"behaviorType": "Pin",
-					"parameters": {
-						"pin-to": "ING875",
-						"x": true,
-						"y": true,
-						"angle": true,
-						"width-type": "no",
-						"height-type": "no",
-						"z": false
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 395069914480701,
-					"parameters": {
-						"group-name": "\"ShipControl\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 877350917384227,
-					"parameters": {
-						"group-name": "\"Tutorial\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 567942606742614,
-					"parameters": {
-						"group-name": "\"Level1\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "RocketPiss",
-					"sid": 698868472975550,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Autolaunch",
-					"sid": 616604071311631,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 104008703679154
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 282445349964659,
-					"parameters": {
-						"variable": "PlayingBootupAnimations"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 449807798358085,
-					"parameters": {
-						"group-name": "\"StartupScreen\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "FirstStartAnimation",
-					"sid": 361093829654106,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "StartAnimation",
-					"sid": 553243971255291,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 599488975169235,
-					"parameters": {
-						"variable": "SplashScreenFinished",
-						"value": "true"
-					}
-				}
-			],
-			"sid": 707305248325983
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 742112379706064,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "Autolaunch"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Autolaunch",
-					"sid": 727507691150622,
-					"parameters": {
-						"instance-variable": "State",
-						"comparison": 0,
-						"value": "\"off\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Autolaunch",
-					"sid": 940246726343245,
-					"parameters": {
-						"frame-number": "1"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 870242568182824,
-					"parameters": {
-						"audio-file": "Dingdingdingding",
 						"loop": "looping",
 						"volume": "-20",
 						"stereo-pan": "0",
-						"tag-optional": "\"ding\""
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 959658891715573,
-					"parameters": {
-						"audio-file": "startup",
-						"loop": "not-looping",
-						"volume": "-10",
-						"stereo-pan": "0",
-						"tag-optional": "\"jetStart\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 638002625906036,
-					"parameters": {
-						"seconds": ".8"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Autolaunch",
-					"sid": 202350895843437,
-					"parameters": {
-						"instance-variable": "State",
-						"value": "\"engaged\""
-					}
-				}
-			],
-			"sid": 353861849279298
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-ended",
-					"objectClass": "Audio",
-					"sid": 494767851884058,
-					"parameters": {
-						"tag": "\"jetStart\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 363513111120330,
-					"parameters": {
-						"audio-file": "jetloop",
-						"loop": "looping",
-						"volume": "-10",
-						"stereo-pan": "0",
 						"tag-optional": "\"jets\""
 					}
 				}
 			],
-			"sid": 512721786762632
+			"sid": 788827649789422
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "SetupEvents",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 284751063220770,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "Autolaunch"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 988167342305581
+						}
+					],
+					"actions": [
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "Rockets",
+							"sid": 675192669286959,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "ING875",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 447211039199521,
+							"parameters": {
+								"group-name": "\"ShipControl\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 706393849949075,
+							"parameters": {
+								"group-name": "\"Tutorial\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 218763568889702,
+							"parameters": {
+								"group-name": "\"Level1\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "RocketPiss",
+							"sid": 147041258284520,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Autolaunch",
+							"sid": 286988160067545,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 431592349472821,
+							"parameters": {
+								"group-name": "\"FirstTimeStartup\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 644381401409728
 				},
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "Autolaunch",
-					"sid": 491081857896227,
-					"parameters": {
-						"instance-variable": "State",
-						"comparison": 0,
-						"value": "\"engaged\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "stop-all",
-					"objectClass": "Audio",
-					"sid": 701020397516243
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 228054217998226,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Autolaunch"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Autolaunch",
+							"sid": 953231837514978,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"off\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Autolaunch",
+							"sid": 789628694051515,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 684661100704503,
+							"parameters": {
+								"audio-file": "Dingdingdingding",
+								"loop": "looping",
+								"volume": "-20",
+								"stereo-pan": "0",
+								"tag-optional": "\"ding\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 627504519104873,
+							"parameters": {
+								"audio-file": "startup",
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"jetStart\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 827312909045509,
+							"parameters": {
+								"seconds": ".8"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Autolaunch",
+							"sid": 991111629396526,
+							"parameters": {
+								"instance-variable": "State",
+								"value": "\"engaged\""
+							}
+						}
+					],
+					"sid": 239649217495564
 				},
 				{
-					"callFunction": "Launch",
-					"sid": 818637081009845
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-ended",
+							"objectClass": "Audio",
+							"sid": 653655605579135,
+							"parameters": {
+								"tag": "\"jetStart\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 590066326524423,
+							"parameters": {
+								"audio-file": "jetloop",
+								"loop": "looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"jets\""
+							}
+						}
+					],
+					"sid": 406141877876250
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 127664303256995,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Autolaunch"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Autolaunch",
+							"sid": 311674363844525,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"engaged\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 478001937735038
+						},
+						{
+							"callFunction": "Launch",
+							"sid": 780151021841949
+						}
+					],
+					"sid": 927823796453247
 				}
 			],
-			"sid": 654061315530937
+			"sid": 161130343117853
 		},
 		{
 			"eventType": "group",
@@ -748,6 +726,36 @@
 					"sid": 835207958396966
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 808127995010119,
+							"parameters": {
+								"variable": "PlayingBootupAnimations"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 392172298223731
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 210392382014644,
+							"parameters": {
+								"group-name": "\"FirstTimeStartup\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 443181522287515
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "FirstTimeStartup",
@@ -758,9 +766,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-start-of-layout",
+									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 173731230233502
+									"sid": 885196074310851
 								}
 							],
 							"actions": [
@@ -1004,18 +1012,6 @@
 										"volume": "0",
 										"stereo-pan": "0",
 										"tag-optional": "\"\""
-									}
-								},
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 637424990840828,
-									"parameters": {
-										"audio-file": "fan",
-										"loop": "looping",
-										"volume": "-8",
-										"stereo-pan": "0",
-										"tag-optional": "\"fan\""
 									}
 								},
 								{
@@ -1574,6 +1570,18 @@
 						{
 							"type": "comment",
 							"text": "And of course, I'm going to leave the spaghetti here until the next branch. It would be way too difficult to retrofit all the code now. Our deadline is SWIFTLY approaching and we don't have that much time."
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 698577860661773,
+							"parameters": {
+								"audio-file": "fan",
+								"loop": "looping",
+								"volume": "-8",
+								"stereo-pan": "0",
+								"tag-optional": "\"fan\""
+							}
 						},
 						{
 							"id": "wait",
@@ -3069,6 +3077,93 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 520632354199116,
+							"parameters": {
+								"variable": "isInSpace"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Background",
+							"sid": 864200485779580,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "RocketPiss",
+							"sid": 684895532110569,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Autolaunch",
+							"sid": 221313423654067,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Rockets",
+							"sid": 162729415341422,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ING875",
+							"sid": 607674870068427,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 541423454061453,
+							"parameters": {
+								"variable": "isInSpace",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 164460110872721,
+							"parameters": {
+								"group-name": "\"ShipControl\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 947448426249121,
+							"parameters": {
+								"audio-file": "jetloop",
+								"loop": "looping",
+								"volume": "-20",
+								"stereo-pan": "0",
+								"tag-optional": "\"jets\""
+							}
+						}
+					],
+					"sid": 834761306070241
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "Opening Credits",
@@ -3082,6 +3177,14 @@
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
 									"sid": 461673904733232
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 684793706345422,
+									"parameters": {
+										"variable": "isInSpace"
+									}
 								}
 							],
 							"actions": [
@@ -3096,11 +3199,11 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 888493421255935,
+									"sid": 130377154922811,
 									"parameters": {
 										"audio-file": "tchaikovsky",
 										"loop": "not-looping",
-										"volume": "10",
+										"volume": "20",
 										"stereo-pan": "0",
 										"tag-optional": "\"waltz\""
 									}
@@ -3240,12 +3343,270 @@
 									"parameters": {
 										"visibility": "invisible"
 									}
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 243073574527232,
+									"parameters": {
+										"tag": "\"creditsOver\""
+									}
 								}
 							],
 							"sid": 267637649933304
 						}
 					],
 					"sid": 805465632267173
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Cutscene",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 574140773595866
+								}
+							],
+							"actions": [
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 558020974232626,
+									"parameters": {
+										"tag": "\"creditsOver\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 822656321214883,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"callFunction": "ShowText",
+									"sid": 575706435447600
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 672023663451142,
+									"parameters": [
+										"\"Ryan\"",
+										"\"Major, could you come and take a look at this?\"",
+										"3",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 151973096596299,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 702657747254535,
+									"parameters": [
+										"\"Stanley\"",
+										"\"What do you want?\"",
+										"2",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 658570875216819,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 261523348802015,
+									"parameters": [
+										"\"Ryan\"",
+										"\"Sensors have picked up an signature, it’s a big one too.\"",
+										"2",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 477646860505188,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 941932410539569,
+									"parameters": [
+										"\"Stanley\"",
+										"\"Ohhh shit. Do we have any fighters on standby?\"",
+										"3",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 855563759347538,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 362039482378981,
+									"parameters": [
+										"\"Ryan\"",
+										"\"Negative, they’re the only one.\"",
+										"2",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 987057811445099,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 912870895685422,
+									"parameters": [
+										"\"Stanley\"",
+										"\"Ok, Private. We have an alien closing in on you, it’ll be there in no time and you’re going to have to kill it yourself. You are physically incapable of objecting.\"",
+										"4",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 319230787144295,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "CountdownFrame",
+									"sid": 743003277712474,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Countdown",
+									"sid": 805506081313642,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 431305126147345,
+									"parameters": [
+										"\"Stanley\"",
+										"\"One more thing I forgot to mention… Do you see that clock on your head-up display? Pay attention to that. \"",
+										"4",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 294323897313823,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 451015485939584,
+									"parameters": [
+										"\"Stanley\"",
+										"\"Once we switch you to combat configuration, you’ll only have about five minutes to neutralize the target. Good luck, private.\"",
+										"5",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 482764562801650,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "HideText",
+									"sid": 877268386395050
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 897588092158486,
+									"parameters": {
+										"variable": "IsCutSceneOver",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 256030257815108
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "boss1",
+									"sid": 478430131719571,
+									"parameters": {
+										"comparison": 2,
+										"y-co-ordinate": "720/4"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 820754259754947,
+									"parameters": {
+										"variable": "IsCutSceneOver"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "boss1",
+									"sid": 997635994743008,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								}
+							],
+							"sid": 838756327512872
+						}
+					],
+					"sid": 215202287199816
 				}
 			],
 			"sid": 539728109304676

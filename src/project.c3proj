@@ -43,6 +43,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
@@ -71,8 +78,22 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "bound",
 			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -83,7 +104,7 @@
 			"Keyboard",
 			"Audio",
 			"Mouse",
-			"OpeningCredits"
+			"boss1"
 		],
 		"subfolders": [
 			{
@@ -111,7 +132,8 @@
 					"Autolaunch",
 					"Dialogue",
 					"commsBG",
-					"Hider"
+					"Hider",
+					"OpeningCredits"
 				],
 				"subfolders": [],
 				"name": "UX"
@@ -121,7 +143,9 @@
 					"ING875",
 					"LaserBlast",
 					"RocketPiss",
-					"Rockets"
+					"Rockets",
+					"CountdownFrame",
+					"Countdown"
 				],
 				"subfolders": [],
 				"name": "Game"
