@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -104,7 +111,8 @@
 			"Keyboard",
 			"Audio",
 			"Mouse",
-			"boss1"
+			"boss1",
+			"Date"
 		],
 		"subfolders": [
 			{
@@ -133,7 +141,9 @@
 					"Dialogue",
 					"commsBG",
 					"Hider",
-					"OpeningCredits"
+					"OpeningCredits",
+					"HealthBar",
+					"WeaponBar"
 				],
 				"subfolders": [],
 				"name": "UX"
@@ -261,6 +271,14 @@
 					"name": "tchaikovsky.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 858550129645971,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "startup_fast.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 335566870288309,
 					"file-info": {
 						"purpose": "none"
 					}

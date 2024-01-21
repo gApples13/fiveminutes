@@ -3,7 +3,29 @@
 	"plugin-id": "Sprite",
 	"sid": 674596498384047,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Heath",
+			"type": "number",
+			"desc": "Health of the ship",
+			"show": true,
+			"sid": 394799981263154
+		},
+		{
+			"name": "WeaponCharge",
+			"type": "number",
+			"desc": "Weapons Charge",
+			"show": true,
+			"sid": 898590440553329
+		},
+		{
+			"name": "areWeaponsBurntOut",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 292106998442427
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "EightDir",

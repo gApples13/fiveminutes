@@ -1,0 +1,10 @@
+{
+	"name": "Date",
+	"plugin-id": "Date",
+	"sid": 101236700950249,
+	"singleglobal-inst": {
+		"type": "Date",
+		"properties": {},
+		"uid": 26
+	}
+}
