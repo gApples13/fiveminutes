@@ -152,7 +152,8 @@
 					"instanceVariables": {
 						"Heath": 14,
 						"WeaponCharge": 100,
-						"areWeaponsBurntOut": false
+						"areWeaponsBurntOut": false,
+						"IsPowerOut": false
 					},
 					"behaviors": {
 						"8Direction": {
@@ -350,7 +351,10 @@
 						"live-preview": false
 					},
 					"uid": 25,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Health": 1200,
+						"AttackMode": 0
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -362,12 +366,12 @@
 							"properties": {
 								"movement": "horizontal",
 								"wave": "sine",
-								"period": 4,
+								"period": 8,
 								"period-random": 0,
 								"period-offset": 0,
 								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
+								"magnitude": 200,
+								"magnitude-random": 50,
 								"enabled": false,
 								"live-preview": false
 							}
@@ -391,6 +395,139 @@
 						"width": 798.1541204554419,
 						"height": 798.1541204554419,
 						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BossBoom",
+					"properties": {
+						"rate": 400,
+						"spray-cone": 360,
+						"type": "one-shot",
+						"object": -1,
+						"initially-visible": true,
+						"live-preview": false,
+						"speed": 800,
+						"size": 32,
+						"opacity": 100,
+						"grow-rate": 0,
+						"x-randomiser": 0,
+						"y-randomiser": 0,
+						"initial-speed-randomiser": 0,
+						"size-randomiser": 0,
+						"grow-rate-randomiser": 0,
+						"acceleration": -150,
+						"gravity": 0,
+						"angle-randomiser": 0,
+						"life-speed-randomiser": 800,
+						"opacity-randomiser": 0,
+						"destroy-mode": "fade-to-invisible",
+						"timeout": 1
+					},
+					"uid": 30,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1581,
+						"y": 132,
+						"width": 100,
+						"height": 100,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BossBullet",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 31,
+					"instanceVariables": {},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 300,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1634,
+						"y": 165,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PlayerBoom",
+					"properties": {
+						"rate": 500,
+						"spray-cone": 360,
+						"type": "one-shot",
+						"object": -1,
+						"initially-visible": true,
+						"live-preview": false,
+						"speed": 800,
+						"size": 32,
+						"opacity": 100,
+						"grow-rate": 0,
+						"x-randomiser": 0,
+						"y-randomiser": 0,
+						"initial-speed-randomiser": 0,
+						"size-randomiser": 0,
+						"grow-rate-randomiser": 0,
+						"acceleration": -150,
+						"gravity": 0,
+						"angle-randomiser": 0,
+						"life-speed-randomiser": 800,
+						"opacity-randomiser": 0,
+						"destroy-mode": "fade-to-invisible",
+						"timeout": 1
+					},
+					"uid": 32,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1560,
+						"y": 479,
+						"width": 100,
+						"height": 100,
+						"originX": 0,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -749,10 +886,54 @@
 					"world": {
 						"x": 1280.158,
 						"y": 719.857,
-						"width": 500.1581971958694,
-						"height": 97.85703858180054,
+						"width": 500.53922341211165,
+						"height": 97.9315871893262,
 						"originX": 1,
 						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Alert",
+					"properties": {
+						"text": "",
+						"enable-bbcode": true,
+						"font": "Monospace",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 29,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 784.1202939864346,
+						"y": 606.7050750287218,
+						"width": 491.11356139674604,
+						"height": 21.205028356593743,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,

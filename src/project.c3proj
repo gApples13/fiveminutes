@@ -117,7 +117,8 @@
 		"subfolders": [
 			{
 				"items": [
-					"Background"
+					"Background",
+					"IncidentReport"
 				],
 				"subfolders": [
 					{
@@ -143,7 +144,8 @@
 					"Hider",
 					"OpeningCredits",
 					"HealthBar",
-					"WeaponBar"
+					"WeaponBar",
+					"Alert"
 				],
 				"subfolders": [],
 				"name": "UX"
@@ -155,7 +157,10 @@
 					"RocketPiss",
 					"Rockets",
 					"CountdownFrame",
-					"Countdown"
+					"Countdown",
+					"BossBoom",
+					"BossBullet",
+					"PlayerBoom"
 				],
 				"subfolders": [],
 				"name": "Game"
@@ -170,7 +175,8 @@
 	},
 	"layouts": {
 		"items": [
-			"Main"
+			"Main",
+			"Game Over"
 		],
 		"subfolders": []
 	},
