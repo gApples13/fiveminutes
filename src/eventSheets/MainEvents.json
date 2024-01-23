@@ -25,7 +25,7 @@
 			"eventType": "variable",
 			"name": "PlayingBootupAnimations",
 			"type": "boolean",
-			"initialValue": "false",
+			"initialValue": "true",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -35,7 +35,7 @@
 			"eventType": "variable",
 			"name": "Level",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -1280,17 +1280,17 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-start-of-layout",
-									"objectClass": "System",
-									"sid": 792183310665329
-								},
-								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 292492329959120,
 									"parameters": {
 										"variable": "BootAnimationFinished"
 									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 229495672417835
 								}
 							],
 							"actions": [
@@ -4164,6 +4164,15 @@
 								"group-name": "\"Tutorial\"",
 								"state": "deactivated"
 							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 659161348027553,
+							"parameters": {
+								"variable": "PlayingBootupAnimations",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 737943065649787
@@ -4257,7 +4266,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": true,
+					"disabled": false,
 					"title": "Opening Credits",
 					"description": "",
 					"isActiveOnStart": true,
@@ -4413,8 +4422,7 @@
 									}
 								}
 							],
-							"sid": 139253775263982,
-							"disabled": true
+							"sid": 139253775263982
 						},
 						{
 							"eventType": "block",
@@ -4446,8 +4454,7 @@
 									}
 								}
 							],
-							"sid": 267637649933304,
-							"disabled": true
+							"sid": 267637649933304
 						}
 					],
 					"sid": 805465632267173
@@ -5225,7 +5232,13 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [],
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 948792899485329
+								}
+							],
 							"actions": [
 								{
 									"id": "wait-for-signal",
@@ -5233,6 +5246,14 @@
 									"sid": 316628913460229,
 									"parameters": {
 										"tag": "\"BattleOver\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 140368891115886,
+									"parameters": {
+										"seconds": "2"
 									}
 								},
 								{
@@ -5289,6 +5310,42 @@
 									"id": "wait-for-signal",
 									"objectClass": "System",
 									"sid": 537464651799526,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 828313326560265,
+									"parameters": [
+										"\"Ryan\"",
+										"\"Oh right! One second.\"",
+										"1",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 574843448604073,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 588659409295525,
+									"parameters": [
+										"\"Stanley\"",
+										"\"Hey kid, you did great! Nice job on your first alien.\"",
+										"1.5",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 629997826204783,
 									"parameters": {
 										"tag": "\"textDone\""
 									}
@@ -5393,6 +5450,10 @@
 				}
 			],
 			"sid": 244793023502897
+		},
+		{
+			"eventType": "comment",
+			"text": "When I'm done with this demo, I'm switching the whole project to godot."
 		}
 	],
 	"sid": 693809518147746
