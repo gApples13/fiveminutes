@@ -905,7 +905,7 @@
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
-						"font": "Monospace",
+						"font": "monospace",
 						"size": 12,
 						"line-height": 0,
 						"bold": false,

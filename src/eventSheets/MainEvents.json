@@ -25,7 +25,7 @@
 			"eventType": "variable",
 			"name": "PlayingBootupAnimations",
 			"type": "boolean",
-			"initialValue": "true",
+			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -35,7 +35,7 @@
 			"eventType": "variable",
 			"name": "Level",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "1",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -1059,7 +1059,7 @@
 					"eventType": "group",
 					"disabled": false,
 					"title": "FirstTimeStartup",
-					"description": "Eva? What's an eva? I don't know what that big robot is????",
+					"description": "Eva? What's an eva? I don't know what that big robot is???? What is knee on jelly fish e van ga lion?",
 					"isActiveOnStart": true,
 					"children": [
 						{
@@ -1280,17 +1280,17 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 792183310665329
+								},
+								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 292492329959120,
 									"parameters": {
 										"variable": "BootAnimationFinished"
 									}
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 108536397690283
 								}
 							],
 							"actions": [
@@ -2538,9 +2538,12 @@
 							}
 						},
 						{
-							"id": "destroy",
+							"id": "set-visible",
 							"objectClass": "ING875",
-							"sid": 194450433811847
+							"sid": 947622952039345,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						},
 						{
 							"id": "destroy",
@@ -2566,6 +2569,24 @@
 							"sid": 862477128845345,
 							"parameters": {
 								"layout": "Game Over"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 776656893820072,
+							"parameters": {
+								"variable": "isInSpace",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 299465220219259,
+							"parameters": {
+								"group-name": "\"Level\" & Level",
+								"state": "deactivated"
 							}
 						}
 					],
@@ -4134,6 +4155,15 @@
 								"group-name": "\"Battle1\"",
 								"state": "deactivated"
 							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 564149126532693,
+							"parameters": {
+								"group-name": "\"Tutorial\"",
+								"state": "deactivated"
+							}
 						}
 					],
 					"sid": 737943065649787
@@ -4227,7 +4257,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "Opening Credits",
 					"description": "",
 					"isActiveOnStart": true,
@@ -4383,7 +4413,8 @@
 									}
 								}
 							],
-							"sid": 139253775263982
+							"sid": 139253775263982,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -4415,7 +4446,8 @@
 									}
 								}
 							],
-							"sid": 267637649933304
+							"sid": 267637649933304,
+							"disabled": true
 						}
 					],
 					"sid": 805465632267173
@@ -4891,6 +4923,14 @@
 									"id": "destroy",
 									"objectClass": "boss1",
 									"sid": 759637688772820
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 427718447820346,
+									"parameters": {
+										"tag": "\"BattleOver\""
+									}
 								}
 							],
 							"sid": 976901300531216
@@ -4932,10 +4972,10 @@
 								{
 									"id": "set-angle-of-motion",
 									"objectClass": "BossBullet",
-									"sid": 904478583939685,
+									"sid": 958107946642712,
 									"behaviorType": "Bullet",
 									"parameters": {
-										"angle": "angle(boss1.X, boss1.Y,ING875.X,ING875.Y)"
+										"angle": "angle(BossBullet.X, BossBullet.Y,ING875.X,ING875.Y)"
 									}
 								},
 								{
@@ -4952,10 +4992,10 @@
 								{
 									"id": "set-angle-of-motion",
 									"objectClass": "BossBullet",
-									"sid": 459530113595924,
+									"sid": 994347408487331,
 									"behaviorType": "Bullet",
 									"parameters": {
-										"angle": "angle(boss1.X, boss1.Y,ING875.X,ING875.Y)"
+										"angle": "angle(BossBullet.X, BossBullet.Y,ING875.X,ING875.Y)"
 									}
 								}
 							],
@@ -5175,9 +5215,184 @@
 						}
 					],
 					"sid": 190460074625589
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "PostCutscene",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 316628913460229,
+									"parameters": {
+										"tag": "\"BattleOver\""
+									}
+								},
+								{
+									"callFunction": "ShowText",
+									"sid": 398825575381441
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 736665267590376,
+									"parameters": [
+										"\"Stanley\"",
+										"\"Alright I’m back. Did you finish the incident report yet? Maybe we can still get some insurance money for that awful ship.\"",
+										"3",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 588476583490706,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 321175058212871,
+									"parameters": [
+										"\"Ryan\"",
+										"\"The pilot survived, Major.\"",
+										".8",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 384707370039782,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								},
+								{
+									"callFunction": "PlayDialogue",
+									"sid": 210948092552767,
+									"parameters": [
+										"\"Stanley\"",
+										"\"Oh shit! They did? Did you switch their ship to life support config yet?\"",
+										"2",
+										"1"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 537464651799526,
+									"parameters": {
+										"tag": "\"textDone\""
+									}
+								}
+							],
+							"sid": 408620588562190
+						}
+					],
+					"sid": 228819505444563
 				}
 			],
 			"sid": 539728109304676
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Reset",
+			"description": "(Hopefully) Restarts the game when you get killed. But isn't currently working.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 967870652240839,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Reset"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 886290293013085,
+							"parameters": {
+								"group-name": "\"Level\" & Level",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "ING875",
+							"sid": 181287723629315,
+							"parameters": {
+								"instance-variable": "Heath",
+								"value": "14"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 858011459468371,
+							"parameters": {
+								"layout": "Main"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 306639156208833,
+							"parameters": {
+								"variable": "SplashScreenFinished",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 245312682177623,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 655908478631585,
+									"parameters": {
+										"variable": "Level",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 197493894364343,
+									"parameters": {
+										"group-name": "\"Opening Credits\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 257883361133663
+						}
+					]
+				}
+			],
+			"sid": 244793023502897
 		}
 	],
 	"sid": 693809518147746

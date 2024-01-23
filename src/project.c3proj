@@ -145,7 +145,8 @@
 					"OpeningCredits",
 					"HealthBar",
 					"WeaponBar",
-					"Alert"
+					"Alert",
+					"Reset"
 				],
 				"subfolders": [],
 				"name": "UX"
