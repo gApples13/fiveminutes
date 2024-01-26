@@ -1,0 +1,155 @@
+{
+	"name": "MenuEvents",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 850277299915214,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "StoryModeButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "TiledBackground",
+					"sid": 902896862456001,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "AcceptanceLetter",
+					"sid": 694472826013963,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 853916781979645,
+					"parameters": {
+						"seconds": "10"
+					}
+				}
+			],
+			"sid": 132920578119439
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 531899728116482,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Options"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 162723686164125
+		},
+		{
+			"functionName": "FadeIn",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 508501841736342,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "while",
+							"objectClass": "System",
+							"sid": 736271395739018
+						},
+						{
+							"id": "compare-opacity",
+							"objectClass": "TiledBackground",
+							"sid": 126224450254683,
+							"parameters": {
+								"comparison": 2,
+								"opacity": "100"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "TiledBackground",
+							"sid": 334601936470333,
+							"parameters": {
+								"opacity": "TiledBackground.Opacity + 1"
+							}
+						}
+					],
+					"sid": 991063420272436
+				}
+			]
+		},
+		{
+			"functionName": "FadeOut",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 480588935226436,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "while",
+							"objectClass": "System",
+							"sid": 731803790458250
+						},
+						{
+							"id": "compare-opacity",
+							"objectClass": "TiledBackground",
+							"sid": 910705161549707,
+							"parameters": {
+								"comparison": 4,
+								"opacity": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "TiledBackground",
+							"sid": 883287865249832,
+							"parameters": {
+								"opacity": "TiledBackground.Opacity - 1"
+							}
+						}
+					],
+					"sid": 106659011908830
+				}
+			]
+		}
+	],
+	"sid": 192766420497624
+}
