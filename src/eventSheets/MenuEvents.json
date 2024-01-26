@@ -125,6 +125,47 @@
 					}
 				},
 				{
+					"id": "set-visible",
+					"objectClass": "ExpoText",
+					"sid": 974918860229264,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-font-size",
+					"objectClass": "ExpoText",
+					"sid": 845126823924943,
+					"parameters": {
+						"size-pt": "20"
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "ExpoText",
+					"sid": 663163342742861,
+					"parameters": {
+						"text": "\"[u]March 6, 2020[/u]\r\n\r\nHangar 21,\r\nSpace Station Two,\r\nLow Earth Orbit.\r\n\r\n[u]Press space to begin.[/u]\"",
+						"duration": "8"
+					}
+				},
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 820214834341010,
+					"parameters": {
+						"tag": "\"continue\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 284147474385789,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 914100391306162,
