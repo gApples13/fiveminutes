@@ -179,6 +179,59 @@
 					"sid": 106659011908830
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 869287242472824
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "TiledBackground",
+					"sid": 504793543481610,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "LegalDisclaimer",
+					"sid": 655786975644541,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 808157444728882,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "TiledBackground",
+					"sid": 643401179722892,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "LegalDisclaimer",
+					"sid": 596901936735550,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 558932013637601
 		}
 	],
 	"sid": 192766420497624

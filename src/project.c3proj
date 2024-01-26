@@ -171,7 +171,8 @@
 					"HealthBar",
 					"WeaponBar",
 					"Alert",
-					"Reset"
+					"Reset",
+					"LegalDisclaimer"
 				],
 				"subfolders": [
 					{
