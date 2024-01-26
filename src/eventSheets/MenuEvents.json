@@ -19,9 +19,9 @@
 				{
 					"id": "set-visible",
 					"objectClass": "TiledBackground",
-					"sid": 902896862456001,
+					"sid": 792463539002431,
 					"parameters": {
-						"visibility": "visible"
+						"visibility": "invisible"
 					}
 				},
 				{
@@ -35,9 +35,39 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 853916781979645,
+					"sid": 251912567907136,
 					"parameters": {
 						"seconds": "10"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "TiledBackground",
+					"sid": 359074669066809,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "TiledBackground",
+					"sid": 239299336537531,
+					"behaviorType": "Fade"
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 899862771190834,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 914100391306162,
+					"parameters": {
+						"layout": "Main"
 					}
 				}
 			],

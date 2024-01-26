@@ -305,8 +305,8 @@
 						"Fade": {
 							"properties": {
 								"fade-in-time": 1,
-								"wait-time": 10,
-								"fade-out-time": 1,
+								"wait-time": 30,
+								"fade-out-time": 0,
 								"destroy": false,
 								"enabled": false,
 								"live-preview": false
