@@ -172,7 +172,8 @@
 					"WeaponBar",
 					"Alert",
 					"Reset",
-					"LegalDisclaimer"
+					"LegalDisclaimer",
+					"ExpoText"
 				],
 				"subfolders": [
 					{
