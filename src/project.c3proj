@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Date",
 			"name": "Date",
 			"author": "Scirra",
@@ -129,79 +136,99 @@
 	"uniqueId": "ahgj6afwa67",
 	"objectTypes": {
 		"items": [
-			"Keyboard",
-			"Audio",
-			"Mouse",
-			"boss1",
 			"Date",
-			"Video",
-			"TiledBackground",
-			"AcceptanceLetter"
+			"Mouse",
+			"Audio",
+			"Keyboard"
 		],
 		"subfolders": [
 			{
 				"items": [
-					"Background",
-					"IncidentReport",
-					"MenuBackground"
+					"AcceptanceLetter",
+					"boss1",
+					"TiledBackground",
+					"Video"
 				],
 				"subfolders": [
 					{
 						"items": [
-							"FirstStartAnimation",
-							"StartAnimation"
+							"Background",
+							"IncidentReport",
+							"MenuBackground"
 						],
-						"subfolders": [],
-						"name": "Splashes"
-					}
-				],
-				"name": "Backgrounds"
-			},
-			{
-				"items": [
-					"CommSystem",
-					"Outlines",
-					"Error",
-					"TalkingHeads",
-					"Autolaunch",
-					"Dialogue",
-					"commsBG",
-					"Hider",
-					"OpeningCredits",
-					"HealthBar",
-					"WeaponBar",
-					"Alert",
-					"Reset",
-					"LegalDisclaimer",
-					"ExpoText"
-				],
-				"subfolders": [
+						"subfolders": [
+							{
+								"items": [
+									"FirstStartAnimation",
+									"StartAnimation"
+								],
+								"subfolders": [],
+								"name": "Splashes"
+							}
+						],
+						"name": "Backgrounds"
+					},
 					{
 						"items": [
-							"StoryModeButton",
-							"ArcadeModeButton",
-							"Options"
+							"ING875",
+							"LaserBlast",
+							"RocketPiss",
+							"Rockets",
+							"CountdownFrame",
+							"Countdown",
+							"BossBoom",
+							"BossBullet",
+							"PlayerBoom"
 						],
 						"subfolders": [],
-						"name": "MainMenu"
+						"name": "Game"
+					},
+					{
+						"items": [
+							"CommSystem",
+							"Outlines",
+							"Error",
+							"TalkingHeads",
+							"Autolaunch",
+							"Dialogue",
+							"commsBG",
+							"Hider",
+							"OpeningCredits",
+							"HealthBar",
+							"WeaponBar",
+							"Alert",
+							"Reset",
+							"LegalDisclaimer",
+							"ExpoText"
+						],
+						"subfolders": [
+							{
+								"items": [
+									"StoryModeButton",
+									"ArcadeModeButton",
+									"Options"
+								],
+								"subfolders": [],
+								"name": "MainMenu"
+							}
+						],
+						"name": "UX"
 					}
 				],
-				"name": "UX"
+				"name": "Main"
 			},
 			{
 				"items": [
-					"ING875",
-					"LaserBlast",
-					"RocketPiss",
-					"Rockets",
-					"CountdownFrame",
-					"Countdown",
-					"BossBoom",
-					"BossBullet",
-					"PlayerBoom"
+					"Title",
+					"DisclaimerMenu",
+					"Tutorial",
+					"Level1",
+					"Skip",
+					"Return",
+					"VersionString"
 				],
 				"subfolders": [],
-				"name": "Game"
+				"name": "DebugMenu"
 			}
 		]
 	},
@@ -215,7 +242,8 @@
 		"items": [
 			"Main",
 			"Game Over",
-			"Menu"
+			"Menu",
+			"Debug Mode"
 		],
 		"subfolders": []
 	},
@@ -477,5 +505,5 @@
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,
-	"firstLayout": null
+	"firstLayout": "Menu"
 }

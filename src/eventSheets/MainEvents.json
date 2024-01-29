@@ -87,6 +87,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "isOpeningCreditsDisabled",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 520523295725863
+		},
+		{
+			"eventType": "variable",
 			"name": "IsCutSceneOver",
 			"type": "boolean",
 			"initialValue": "false",
@@ -4173,9 +4183,42 @@
 								"variable": "PlayingBootupAnimations",
 								"value": "false"
 							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Outlines",
+							"sid": 525649659136037,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						}
 					],
 					"sid": 737943065649787
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 616121416970635,
+							"parameters": {
+								"variable": "isOpeningCreditsDisabled"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 817902897141661,
+							"parameters": {
+								"group-name": "\"Opening Credits\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 490475848460007
 				},
 				{
 					"eventType": "block",
