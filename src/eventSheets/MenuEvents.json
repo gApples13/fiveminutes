@@ -39,9 +39,9 @@
 				{
 					"id": "typewriter-text",
 					"objectClass": "ExpoText",
-					"sid": 349432368239579,
+					"sid": 239575461910438,
 					"parameters": {
-						"text": "\"It's a cold February morning.\r\n\r\nYou wake up in your apartment in Bellingham, Washington, USA.\r\n\r\nYou turn on the news. Another alien invasion. Seattle is destroyed.\r\n\r\nThings are looking bleak for humanity. A mysterious alien force overwhelms earth's most powerful armies.\r\n\r\nThere's a knock on the door. The mailman is here. But it's Sunday.\r\n\r\n[u]Press space to continue.[/u]\"",
+						"text": "\"It's a cold February morning.\r\n\r\nYou wake up in your apartment in Bellingham, Washington, USA.\r\n\r\nYou turn on the news. Another alien invasion. Seattle is destroyed.\r\n\r\nThings are looking bleak for humanity. A mysterious alien force overwhelms earth's most powerful armies.\r\n\r\nThere's a knock on the door. The mailman is here. Funny, you were almost certain it was Sunday.\r\n\r\n[u]Press space to continue.[/u]\"",
 						"duration": "10"
 					}
 				},
@@ -127,7 +127,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "ExpoText",
-					"sid": 974918860229264,
+					"sid": 263327923928933,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -135,17 +135,26 @@
 				{
 					"id": "set-font-size",
 					"objectClass": "ExpoText",
-					"sid": 845126823924943,
+					"sid": 413543855067883,
 					"parameters": {
-						"size-pt": "20"
+						"size-pt": "24"
+					}
+				},
+				{
+					"id": "set-font-face",
+					"objectClass": "ExpoText",
+					"sid": 152734479911799,
+					"parameters": {
+						"font-face": "\"monospace\"",
+						"style": "normal"
 					}
 				},
 				{
 					"id": "typewriter-text",
 					"objectClass": "ExpoText",
-					"sid": 663163342742861,
+					"sid": 269069331261591,
 					"parameters": {
-						"text": "\"[u]March 6, 2020[/u]\r\n\r\nHangar 21,\r\nSpace Station Two,\r\nLow Earth Orbit.\r\n\r\n[u]Press space to begin.[/u]\"",
+						"text": "\"[u]March 6, 2019[/u]\r\n\r\nHangar 21,\r\nSpace Station Two,\r\nLow Earth Orbit.\r\n\r\n[u]Press space to begin.[/u]\"",
 						"duration": "8"
 					}
 				},
@@ -155,6 +164,14 @@
 					"sid": 820214834341010,
 					"parameters": {
 						"tag": "\"continue\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ExpoText",
+					"sid": 974559234872193,
+					"parameters": {
+						"visibility": "invisible"
 					}
 				},
 				{
