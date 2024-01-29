@@ -724,6 +724,113 @@
 				}
 			],
 			"sid": 746271144199629
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ResetButton",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "levelLimbo",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 569913181954696
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 582763647653994,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Reset"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 911429169754679,
+							"parameters": {
+								"variable": "levelLimbo",
+								"value": "Level"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 960326133455366
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 595896672163302,
+							"parameters": {
+								"variable": "Level",
+								"value": "levelLimbo"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 944126194125198,
+							"parameters": {
+								"layout": "Main"
+							}
+						}
+					],
+					"sid": 756758567955227,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 215360010969384,
+									"parameters": {
+										"variable": "Level",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 219264174387309,
+									"parameters": {
+										"variable": "isOpeningCreditsDisabled",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 185016375090745,
+									"parameters": {
+										"variable": "PlayingBootupAnimations",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 826735375348050
+						}
+					]
+				}
+			],
+			"sid": 434914784729892
 		}
 	],
 	"sid": 192766420497624

@@ -221,7 +221,7 @@
 				{
 					"type": "VersionString",
 					"properties": {
-						"text": "5:00 version v0.0.1 BETA. Commit f888ff1. Copyright 2024 Henry Clarke.",
+						"text": "5:00 version v0.0.1 BETA | Commit 09a553aadbff1082ca4cf57e4b155e884fece178 | Copyright 2024 Henry Clarke.",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,

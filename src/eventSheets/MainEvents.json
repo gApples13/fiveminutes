@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "    Copyright (C) 2024  Henry Clarke\n\n    This program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU Affero General Public License as\n    published by the Free Software Foundation, either version 3 of the\n    License, or (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU Affero General Public License for more details.\n\n    You should have received a copy of the GNU Affero General Public License\n    along with this program.  If not, see <https://www.gnu.org/licenses/>."
+			"text": "    Copyright (C) 2024 Henry Clarke\n\n    This program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU Affero General Public License as\n    published by the Free Software Foundation, either version 3 of the\n    License, or (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU Affero General Public License for more details.\n\n    You should have received a copy of the GNU Affero General Public License\n    along with this program.  If not, see <https://www.gnu.org/licenses/>."
 		},
 		{
 			"eventType": "variable",
@@ -3733,17 +3733,17 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
+							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 335142246593204,
+							"sid": 455837687213992,
 							"parameters": {
 								"key": 68
 							}
 						},
 						{
-							"id": "key-is-down",
+							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 326868999895064,
+							"sid": 400837766740415,
 							"parameters": {
 								"key": 39
 							}
@@ -3822,17 +3822,17 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
+							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 477009375047614,
+							"sid": 726901517903892,
 							"parameters": {
 								"key": 65
 							}
 						},
 						{
-							"id": "key-is-down",
+							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 439433361643319,
+							"sid": 628225453814050,
 							"parameters": {
 								"key": 37
 							}
@@ -3911,33 +3911,33 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
+							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 256225051630844,
+							"sid": 320438476577044,
 							"parameters": {
 								"key": 87
 							}
 						},
 						{
-							"id": "key-is-down",
+							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 753765572075604,
+							"sid": 165325863484458,
 							"parameters": {
 								"key": 38
 							}
 						},
 						{
-							"id": "key-is-down",
+							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 916889565926305,
+							"sid": 431667161842380,
 							"parameters": {
 								"key": 83
 							}
 						},
 						{
-							"id": "key-is-down",
+							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 244491331199518,
+							"sid": 857734896489105,
 							"parameters": {
 								"key": 40
 							}
@@ -4016,9 +4016,9 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
+							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 734032882042820,
+							"sid": 737184155162606,
 							"parameters": {
 								"key": 32
 							}
@@ -5401,98 +5401,6 @@
 				}
 			],
 			"sid": 539728109304676
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Reset",
-			"description": "(Hopefully) Restarts the game when you get killed. But isn't currently working.",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 967870652240839,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Reset"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 886290293013085,
-							"parameters": {
-								"group-name": "\"Level\" & Level",
-								"state": "activated"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "ING875",
-							"sid": 181287723629315,
-							"parameters": {
-								"instance-variable": "Heath",
-								"value": "14"
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 858011459468371,
-							"parameters": {
-								"layout": "Main"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 306639156208833,
-							"parameters": {
-								"variable": "SplashScreenFinished",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 245312682177623,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 655908478631585,
-									"parameters": {
-										"variable": "Level",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 197493894364343,
-									"parameters": {
-										"group-name": "\"Opening Credits\"",
-										"state": "deactivated"
-									}
-								}
-							],
-							"sid": 257883361133663
-						}
-					]
-				}
-			],
-			"sid": 244793023502897
 		},
 		{
 			"eventType": "comment",
