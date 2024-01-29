@@ -6,6 +6,10 @@
 			"text": "    Copyright (C) 2024  Henry Clarke\n\n    This program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU Affero General Public License as\n    published by the Free Software Foundation, either version 3 of the\n    License, or (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU Affero General Public License for more details.\n\n    You should have received a copy of the GNU Affero General Public License\n    along with this program.  If not, see <https://www.gnu.org/licenses/>."
 		},
 		{
+			"eventType": "comment",
+			"text": "TODO: Need to add options menu, maybe add arcade mode in next release."
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -282,6 +286,10 @@
 					"sid": 106659011908830
 				}
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "TODO: need to convert the video file to be compatible with construct (doesn't support AVI files)"
 		},
 		{
 			"eventType": "block",
