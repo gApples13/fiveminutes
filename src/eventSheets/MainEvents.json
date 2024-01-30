@@ -116,6 +116,16 @@
 			"sid": 368911496224179
 		},
 		{
+			"eventType": "variable",
+			"name": "godModeEnabled",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 666247466410695
+		},
+		{
 			"functionName": "ClockUpdate",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -779,6 +789,14 @@
 									"parameters": {
 										"variable": "CheatCodes"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 716449998776018,
+									"parameters": {
+										"variable": "godModeEnabled"
+									}
 								}
 							],
 							"actions": [
@@ -791,7 +809,8 @@
 									}
 								}
 							],
-							"sid": 579631660419613
+							"sid": 579631660419613,
+							"isOrBlock": true
 						}
 					]
 				},
@@ -1973,6 +1992,15 @@
 										"instance-variable": "areWeaponsBurntOut"
 									},
 									"isInverted": true
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 854245028629047,
+									"parameters": {
+										"variable": "godModeEnabled"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -2051,6 +2079,99 @@
 								}
 							],
 							"sid": 605931648126348
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 877975373659488,
+									"parameters": {
+										"variable": "godModeEnabled"
+									}
+								},
+								{
+									"id": "while",
+									"objectClass": "System",
+									"sid": 911285011085337
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 402858616545459,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 832497003089164,
+									"parameters": {
+										"interval-seconds": ".01"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "ING875",
+									"sid": 101978773302581,
+									"parameters": {
+										"object": "LaserBlast",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "LaserBlast",
+									"sid": 111063984983133,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "270"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "LaserBlast",
+									"sid": 953283275640919,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "ING875",
+									"sid": 378728424934604,
+									"parameters": {
+										"object": "LaserBlast",
+										"layer": "1",
+										"image-point": "2",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "LaserBlast",
+									"sid": 388812120394297,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "270"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "LaserBlast",
+									"sid": 398522836994838,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 258165324557841
 						},
 						{
 							"eventType": "block",
@@ -2346,6 +2467,15 @@
 									"parameters": {
 										"object": "ING875"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 281292162155470,
+									"parameters": {
+										"variable": "godModeEnabled"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [

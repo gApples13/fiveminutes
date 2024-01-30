@@ -477,7 +477,7 @@
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 860685302453456,
+							"sid": 849196643619200,
 							"parameters": {
 								"key": 40
 							}
@@ -485,7 +485,7 @@
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 567095647297253,
+							"sid": 613467163214197,
 							"parameters": {
 								"key": 39
 							}
@@ -493,21 +493,21 @@
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 270271182693439
+							"sid": 400100741176876
 						}
 					],
 					"actions": [
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 593811095562921,
+							"sid": 284801979887232,
 							"parameters": {
 								"variable": "sequenceProgression",
 								"value": "sequenceProgression & \"3\""
 							}
 						}
 					],
-					"sid": 687314521880365
+					"sid": 115782988046726
 				},
 				{
 					"eventType": "block",
@@ -784,6 +784,50 @@
 						}
 					],
 					"sid": 863747721274331
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-checked",
+							"objectClass": "godMode",
+							"sid": 604914925379032
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 376724124902332,
+							"parameters": {
+								"variable": "godModeEnabled",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 508833837271614
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 851296879177577
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 841591853574262,
+							"parameters": {
+								"variable": "godModeEnabled",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 383588271531662
 				}
 			],
 			"sid": 746271144199629
