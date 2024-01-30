@@ -2,7 +2,80 @@
 	"name": "Debug Mode",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "BG",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "STBackground",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 56,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1312,
+						"height": 736,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 235898877102526,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Settings",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
@@ -17,9 +90,9 @@
 						"bold": true,
 						"italic": false,
 						"color": [
-							0,
-							0,
-							0,
+							1,
+							1,
+							1,
 							1
 						],
 						"horizontal-alignment": "left",
@@ -35,7 +108,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 510,
-						"y": 19,
+						"y": 32,
 						"width": 260,
 						"height": 59,
 						"originX": 0,
@@ -61,9 +134,9 @@
 						"bold": false,
 						"italic": false,
 						"color": [
-							0,
-							0,
-							0,
+							0.8196078431372549,
+							0.8196078431372549,
+							0.8196078431372549,
 							1
 						],
 						"horizontal-alignment": "left",
@@ -78,8 +151,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 26,
-						"y": 79,
+						"x": 32,
+						"y": 96,
 						"width": 927,
 						"height": 44,
 						"originX": 0,
@@ -111,8 +184,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 24,
-						"y": 129,
+						"x": 32,
+						"y": 160,
 						"width": 72,
 						"height": 24,
 						"originX": 0,
@@ -142,8 +215,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 104,
-						"y": 129,
+						"x": 128,
+						"y": 160,
 						"width": 72,
 						"height": 24,
 						"originX": 0,
@@ -173,8 +246,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 24,
-						"y": 174,
+						"x": 32,
+						"y": 256,
 						"width": 317,
 						"height": 24,
 						"originX": 0,
@@ -204,8 +277,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 26,
-						"y": 208,
+						"x": 32,
+						"y": 288,
 						"width": 115,
 						"height": 24,
 						"originX": 0,
@@ -221,7 +294,7 @@
 				{
 					"type": "VersionString",
 					"properties": {
-						"text": "5:00 version v0.0.1 BETA | Commit 09a553aadbff1082ca4cf57e4b155e884fece178 | Copyright 2024 Henry Clarke.",
+						"text": "5:00 version v0.0.1 BETA | Commit 09a553aadbff1082ca4cf57e4b155e884fece178 | Copyright (c) 2024 Henry Clarke.",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
@@ -229,9 +302,9 @@
 						"bold": false,
 						"italic": false,
 						"color": [
-							0,
-							0,
-							0,
+							0.6666666666666666,
+							0.803921568627451,
+							0.8117647058823529,
 							1
 						],
 						"horizontal-alignment": "left",
@@ -246,8 +319,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 19,
-						"y": 660,
+						"x": 32,
+						"y": 672,
 						"width": 1213,
 						"height": 30,
 						"originX": 0,
@@ -279,8 +352,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 319,
-						"y": 172,
+						"x": 352,
+						"y": 256,
 						"width": 170,
 						"height": 24,
 						"originX": 0,
@@ -294,7 +367,7 @@
 					}
 				}
 			],
-			"sid": 114839136739415,
+			"sid": 655650046194820,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -305,12 +378,12 @@
 				1
 			],
 			"backgroundColor": [
-				0.3686274509803922,
-				0.3686274509803922,
-				0.3686274509803922,
+				1,
+				1,
+				1,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,

@@ -335,6 +335,15 @@
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 869287242472824
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 557888913666932,
+					"parameters": {
+						"variable": "gameComplete"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -939,6 +948,35 @@
 						}
 					],
 					"sid": 986818426221716
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 244662843816838
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 172181085295160,
+							"parameters": {
+								"variable": "gameComplete"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground",
+							"sid": 192120087547506,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 562159015132037
 				}
 			],
 			"sid": 329346022574725

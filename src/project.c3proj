@@ -228,7 +228,8 @@
 					"Skip",
 					"Return",
 					"VersionString",
-					"Cheats"
+					"Cheats",
+					"STBackground"
 				],
 				"subfolders": [],
 				"name": "DebugMenu"
