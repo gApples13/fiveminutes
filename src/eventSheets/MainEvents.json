@@ -106,6 +106,16 @@
 			"sid": 345848541647889
 		},
 		{
+			"eventType": "variable",
+			"name": "CheatCodes",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 368911496224179
+		},
+		{
 			"functionName": "ClockUpdate",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -757,7 +767,33 @@
 							}
 						}
 					],
-					"sid": 644381401409728
+					"sid": 644381401409728,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 382674379521251,
+									"parameters": {
+										"variable": "CheatCodes"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "warning",
+									"sid": 488239963287667,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 579631660419613
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -4947,6 +4983,39 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "LaserBlast",
+									"sid": 251894699331509,
+									"parameters": {
+										"object": "boss1"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 961763770109527,
+									"parameters": {
+										"variable": "CheatCodes"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "boss1",
+									"sid": 396456964964163,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 123635927462262
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-instance-variable",
 									"objectClass": "boss1",
 									"sid": 260665269338493,
@@ -5391,6 +5460,57 @@
 									"sid": 629997826204783,
 									"parameters": {
 										"tag": "\"textDone\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 265590916099726,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"callFunction": "HideText",
+									"sid": 466992518783008
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "TiledBackground",
+									"sid": 876229110891448,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "restart-fade",
+									"objectClass": "TiledBackground",
+									"sid": 518055812026743,
+									"behaviorType": "Fade"
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 701069975211398,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 165884966357370,
+									"parameters": {
+										"variable": "gameComplete",
+										"value": "true"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 722360226438324,
+									"parameters": {
+										"layout": "Thank You"
 									}
 								}
 							],

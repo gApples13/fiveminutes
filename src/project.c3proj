@@ -139,7 +139,8 @@
 			"Date",
 			"Mouse",
 			"Audio",
-			"Keyboard"
+			"Keyboard",
+			"Text"
 		],
 		"subfolders": [
 			{
@@ -147,7 +148,8 @@
 					"AcceptanceLetter",
 					"boss1",
 					"TiledBackground",
-					"Video"
+					"Video",
+					"warning"
 				],
 				"subfolders": [
 					{
@@ -225,7 +227,8 @@
 					"Level1",
 					"Skip",
 					"Return",
-					"VersionString"
+					"VersionString",
+					"Cheats"
 				],
 				"subfolders": [],
 				"name": "DebugMenu"
@@ -243,7 +246,8 @@
 			"Main",
 			"Game Over",
 			"Menu",
-			"Debug Mode"
+			"Debug Mode",
+			"Thank You"
 		],
 		"subfolders": []
 	},
