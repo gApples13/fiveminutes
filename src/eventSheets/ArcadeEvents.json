@@ -2,6 +2,36 @@
 	"name": "ArcadeEvents",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "ShotsHit",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 602782701391631
+		},
+		{
+			"eventType": "variable",
+			"name": "ShotsFired",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 288218528986642
+		},
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 213483185520248
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -11,6 +41,15 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "WeaponBar",
+					"sid": 629172903937563,
+					"parameters": {
+						"instance-variable": "BarMaxWidth",
+						"value": "WeaponBar.Width"
+					}
+				},
 				{
 					"id": "pin-to-object-properties",
 					"objectClass": "Rockets",
@@ -41,9 +80,167 @@
 					"parameters": {
 						"visibility": "visible"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 149782999744400,
+					"parameters": {
+						"audio-file": "jetloop",
+						"loop": "looping",
+						"volume": "-20",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "CountdownFrame",
+					"sid": 355049954842268,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Countdown",
+					"sid": 814635937335234,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "TutorialText",
+					"sid": 955447625300279,
+					"parameters": {
+						"text": "\"Move: Arrow Keys or WASD  Fire weapons: Space\"",
+						"duration": "2"
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "MoreTutorialText",
+					"sid": 164653850638611,
+					"parameters": {
+						"text": "\"You only have five minutes to win! Use your time wisely!\"",
+						"duration": "2"
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "EvenMoreTutorialText",
+					"sid": 262585748908540,
+					"parameters": {
+						"text": "\"Weapons discharge and recharge. If you discharge them completely, they will take longer to recharge. \"",
+						"duration": "2"
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "TutorialText",
+					"sid": 353002458460526,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "ING875",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 567328643001738,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "TutorialText",
+					"sid": 405314609570252,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "MoreTutorialText",
+					"sid": 320548778553346,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "EvenMoreTutorialText",
+					"sid": 813170163382196,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Countdown",
+					"sid": 438285906069281,
+					"parameters": {
+						"instance-variable": "minutePlace",
+						"value": "5"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Countdown",
+					"sid": 329751509166665,
+					"parameters": {
+						"instance-variable": "secondPlace",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Countdown",
+					"sid": 786877605578780,
+					"parameters": {
+						"instance-variable": "millisecondPlace",
+						"value": "0"
+					}
+				},
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 484316641276455,
+					"parameters": {
+						"tag": "\"respawn\""
+					}
 				}
 			],
 			"sid": 728372022561149
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 246918719212124
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "ScoreText",
+					"sid": 217974358268095,
+					"parameters": {
+						"text": "\"Score: \" & Score"
+					}
+				}
+			],
+			"sid": 217189397679181
 		},
 		{
 			"eventType": "group",
@@ -65,15 +262,24 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 694436951612019,
+									"sid": 261044020280310,
 									"parameters": {
 										"interval-seconds": "1"
 									}
 								},
 								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 662938886594583,
+									"parameters": {
+										"variable": "isCruiseMode"
+									},
+									"isInverted": true
+								},
+								{
 									"id": "is-boolean-instance-variable-set",
 									"objectClass": "ING875",
-									"sid": 408841328854772,
+									"sid": 133215747848517,
 									"parameters": {
 										"instance-variable": "IsPowerOut"
 									},
@@ -82,7 +288,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "ING875",
-									"sid": 696664977573519,
+									"sid": 959828243356471,
 									"parameters": {
 										"instance-variable": "Heath",
 										"comparison": 4,
@@ -94,14 +300,14 @@
 								{
 									"id": "subtract-from-instvar",
 									"objectClass": "Countdown",
-									"sid": 563616329834903,
+									"sid": 802668280246405,
 									"parameters": {
 										"instance-variable": "secondPlace",
 										"value": "1"
 									}
 								}
 							],
-							"sid": 597924114029852
+							"sid": 394724972685308
 						},
 						{
 							"eventType": "block",
@@ -109,15 +315,24 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 506234520019620,
+									"sid": 170368395299550,
 									"parameters": {
 										"interval-seconds": ".001"
 									}
 								},
 								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 529775529149874,
+									"parameters": {
+										"variable": "isCruiseMode"
+									},
+									"isInverted": true
+								},
+								{
 									"id": "is-boolean-instance-variable-set",
 									"objectClass": "ING875",
-									"sid": 916667841403276,
+									"sid": 433395404547313,
 									"parameters": {
 										"instance-variable": "IsPowerOut"
 									},
@@ -126,7 +341,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "ING875",
-									"sid": 604175207661787,
+									"sid": 936054346854904,
 									"parameters": {
 										"instance-variable": "Heath",
 										"comparison": 4,
@@ -138,7 +353,7 @@
 								{
 									"id": "subtract-from-instvar",
 									"objectClass": "Countdown",
-									"sid": 797437062986698,
+									"sid": 187685620995805,
 									"parameters": {
 										"instance-variable": "millisecondPlace",
 										"value": "1"
@@ -146,10 +361,10 @@
 								},
 								{
 									"callFunction": "ClockUpdate",
-									"sid": 815825194269920
+									"sid": 609382937457007
 								}
 							],
-							"sid": 168784471229518,
+							"sid": 161768494283473,
 							"children": [
 								{
 									"eventType": "block",
@@ -157,7 +372,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Countdown",
-											"sid": 355373354721501,
+											"sid": 267264330458035,
 											"parameters": {
 												"instance-variable": "millisecondPlace",
 												"comparison": 3,
@@ -169,14 +384,14 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "Countdown",
-											"sid": 432377428655824,
+											"sid": 224398402385698,
 											"parameters": {
 												"instance-variable": "millisecondPlace",
 												"value": "99"
 											}
 										}
 									],
-									"sid": 828050494582590
+									"sid": 632987265853492
 								}
 							]
 						},
@@ -186,7 +401,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Countdown",
-									"sid": 784656954850204,
+									"sid": 940268066609296,
 									"parameters": {
 										"instance-variable": "minutePlace",
 										"comparison": 0,
@@ -196,7 +411,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Countdown",
-									"sid": 773571380000042,
+									"sid": 176165634513002,
 									"parameters": {
 										"instance-variable": "secondPlace",
 										"comparison": 0,
@@ -208,7 +423,7 @@
 								{
 									"id": "set-boolean-instvar",
 									"objectClass": "ING875",
-									"sid": 428657155097952,
+									"sid": 833907107280188,
 									"parameters": {
 										"instance-variable": "IsPowerOut",
 										"value": "true"
@@ -217,7 +432,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Countdown",
-									"sid": 238082449301208,
+									"sid": 374625779702212,
 									"parameters": {
 										"instance-variable": "ClockMins",
 										"value": "\"00\""
@@ -226,7 +441,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Countdown",
-									"sid": 651324852021774,
+									"sid": 415067276521340,
 									"parameters": {
 										"instance-variable": "ClockSecs",
 										"value": "\"00\""
@@ -235,7 +450,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Countdown",
-									"sid": 332820214845754,
+									"sid": 874968758442326,
 									"parameters": {
 										"instance-variable": "ClockMS",
 										"value": "\"00\""
@@ -243,12 +458,12 @@
 								},
 								{
 									"callFunction": "ClockUpdate",
-									"sid": 612792405202169
+									"sid": 789472595761527
 								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 292439526017266,
+									"sid": 392712330280596,
 									"parameters": {
 										"group-name": "\"Movement\"",
 										"state": "deactivated"
@@ -257,7 +472,7 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 683752981482191,
+									"sid": 352317483601975,
 									"parameters": {
 										"group-name": "\"Combat\"",
 										"state": "deactivated"
@@ -266,13 +481,13 @@
 								{
 									"id": "set-rate",
 									"objectClass": "Rockets",
-									"sid": 318283651789094,
+									"sid": 591355655033223,
 									"parameters": {
 										"rate": "0"
 									}
 								}
 							],
-							"sid": 804592702374751
+							"sid": 100957693826908
 						},
 						{
 							"eventType": "block",
@@ -280,12 +495,12 @@
 								{
 									"id": "while",
 									"objectClass": "System",
-									"sid": 133042466073119
+									"sid": 537310263321154
 								},
 								{
 									"id": "is-boolean-instance-variable-set",
 									"objectClass": "ING875",
-									"sid": 661799149426080,
+									"sid": 492634614465715,
 									"parameters": {
 										"instance-variable": "IsPowerOut"
 									}
@@ -293,7 +508,7 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 280565286613351,
+									"sid": 565769668391011,
 									"parameters": {
 										"interval-seconds": "1.0"
 									}
@@ -303,13 +518,13 @@
 								{
 									"id": "set-visible",
 									"objectClass": "Countdown",
-									"sid": 259038327214827,
+									"sid": 673932739741342,
 									"parameters": {
 										"visibility": "toggle"
 									}
 								}
 							],
-							"sid": 392857691289879
+							"sid": 992798344705234
 						},
 						{
 							"eventType": "block",
@@ -317,7 +532,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Countdown",
-									"sid": 105942392412848,
+									"sid": 961033081669011,
 									"parameters": {
 										"instance-variable": "minutePlace",
 										"comparison": 4,
@@ -329,13 +544,13 @@
 								{
 									"id": "set-default-color",
 									"objectClass": "Countdown",
-									"sid": 222076348630158,
+									"sid": 565909263970049,
 									"parameters": {
 										"color": "rgbEx(0, 100, 0)"
 									}
 								}
 							],
-							"sid": 165052271708036
+							"sid": 881863708526228
 						},
 						{
 							"eventType": "block",
@@ -343,23 +558,23 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 670166371573222
+									"sid": 878904755454611
 								}
 							],
 							"actions": [
 								{
 									"id": "set-default-color",
 									"objectClass": "Countdown",
-									"sid": 710167716773095,
+									"sid": 360778527653809,
 									"parameters": {
 										"color": "rgbEx(100, 0, 0)"
 									}
 								}
 							],
-							"sid": 536428365762710
+							"sid": 840062539311327
 						}
 					],
-					"sid": 948739014124567
+					"sid": 479135326704205
 				},
 				{
 					"eventType": "group",
@@ -1107,6 +1322,11 @@
 								"comparison": 3,
 								"value": "0"
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 256773832765540
 						}
 					],
 					"actions": [
@@ -1148,40 +1368,738 @@
 							"sid": 850032466866593
 						},
 						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 317202961301867,
+							"parameters": {
+								"tag": "\"gameover\""
+							}
+						},
+						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 478039013522463,
+							"sid": 769721749361602,
 							"parameters": {
-								"layout": "Game Over"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 904231043503189,
-							"parameters": {
-								"variable": "isInSpace",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 894084175762269,
-							"parameters": {
-								"group-name": "\"Level\" & Level",
-								"state": "deactivated"
+								"layout": "ArcadeResults"
 							}
 						}
 					],
 					"sid": 572063195302033
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "ING875",
+							"sid": 745906020974674,
+							"parameters": {
+								"instance-variable": "IsPowerOut"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 774964444178525
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 246458005277540,
+							"parameters": {
+								"seconds": "5.0"
+							}
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 251390600403489,
+							"parameters": {
+								"tag": "\"gameover\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 175848568973785,
+							"parameters": {
+								"layout": "ArcadeResults"
+							}
+						}
+					],
+					"sid": 397324978730286
 				}
 			],
 			"sid": 200338753159714
 		},
 		{
-			"eventType": "comment",
-			"text": "I hate construct"
+			"eventType": "group",
+			"disabled": false,
+			"title": "ArcadeBossBehavior",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-signal",
+							"objectClass": "System",
+							"sid": 670390538710624,
+							"parameters": {
+								"tag": "\"respawn\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "BossSpawner",
+							"sid": 390834457819282,
+							"parameters": {
+								"object": "boss1",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 764048861676426,
+							"parameters": {
+								"variable": "isCruiseMode",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 972858011786900
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "boss1",
+							"sid": 812156393127407,
+							"parameters": {
+								"comparison": 3,
+								"y-co-ordinate": "720/4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "boss1",
+							"sid": 750004579389020,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 561798491737571
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 963785883228991
+						}
+					],
+					"actions": [
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 264156084586852,
+							"parameters": {
+								"tag": "\"inPosition\""
+							}
+						}
+					],
+					"sid": 994882275668706
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-signal",
+							"objectClass": "System",
+							"sid": 334946355727453,
+							"parameters": {
+								"tag": "\"inPosition\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "boss1",
+							"sid": 451876498564524,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						}
+					],
+					"sid": 422636450704637
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LaserBlast",
+							"sid": 399974176974668,
+							"parameters": {
+								"object": "boss1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "LaserBlast",
+							"sid": 512014150249907
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "boss1",
+							"sid": 457290048297909,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "boss1",
+							"sid": 839205749871257,
+							"parameters": {
+								"color": "rgbEx(100, 0, 0)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 854614953751734,
+							"parameters": {
+								"seconds": ".1"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "boss1",
+							"sid": 442572963873301,
+							"parameters": {
+								"color": "rgbEx(100, 100, 100)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 502270020879996,
+							"parameters": {
+								"variable": "ShotsHit",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 671515640090967,
+							"parameters": {
+								"variable": "Score",
+								"value": "10"
+							}
+						}
+					],
+					"sid": 163863877479804
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "LaserBlast",
+							"sid": 337276433878471,
+							"parameters": {
+								"object": "boss1"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 233953578972689,
+							"parameters": {
+								"variable": "CheatCodes"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "boss1",
+							"sid": 688387498638018,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 684642325200422
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "boss1",
+							"sid": 370997270695465,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "boss1",
+							"sid": 938147579463811,
+							"parameters": {
+								"object": "BossBoom",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "boss1",
+							"sid": 599604380090530
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 129592570499857,
+							"parameters": {
+								"tag": "\"respawn\""
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 923310243559942,
+							"parameters": {
+								"variable": "Score",
+								"value": "100"
+							}
+						}
+					],
+					"sid": 986274971778646
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "boss1",
+							"sid": 393945959210609,
+							"parameters": {
+								"instance-variable": "AttackMode",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 827200319153213,
+							"parameters": {
+								"interval-seconds": ".5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "boss1",
+							"sid": 995973597745264,
+							"parameters": {
+								"object": "BossBullet",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "BossBullet",
+							"sid": 280176442348841,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "angle(BossBullet.X, BossBullet.Y,ING875.X,ING875.Y)"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "boss1",
+							"sid": 804291859314386,
+							"parameters": {
+								"object": "BossBullet",
+								"layer": "1",
+								"image-point": "2",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "BossBullet",
+							"sid": 530868593774986,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "angle(BossBullet.X, BossBullet.Y,ING875.X,ING875.Y)"
+							}
+						}
+					],
+					"sid": 259385295403318
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "boss1",
+							"sid": 537504937557129,
+							"parameters": {
+								"instance-variable": "AttackMode",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 273866172679778,
+							"parameters": {
+								"interval-seconds": ".1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "boss1",
+							"sid": 184351515301582,
+							"parameters": {
+								"object": "BossBullet",
+								"layer": "1",
+								"image-point": "3",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "BossBullet",
+							"sid": 601726930430417,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90 + random(-20, 20) "
+							}
+						}
+					],
+					"sid": 821431096786916
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "boss1",
+							"sid": 548512389421627,
+							"parameters": {
+								"instance-variable": "AttackMode",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 952805644246332,
+							"parameters": {
+								"interval-seconds": ".8"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "boss1",
+							"sid": 682499933590362,
+							"parameters": {
+								"object": "BossBullet",
+								"layer": "1",
+								"image-point": "4",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "BossBullet",
+							"sid": 319600689470823,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "angle(BossBullet.X, BossBullet.Y, ING875.X, ING875.Y)"
+							}
+						}
+					],
+					"sid": 281707971843301
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "boss1",
+							"sid": 405521230478049,
+							"parameters": {
+								"instance-variable": "AttackMode",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 881082147099649
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 938187931146990,
+							"parameters": {
+								"seconds": "25"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "boss1",
+							"sid": 164857962036402,
+							"parameters": {
+								"instance-variable": "AttackMode",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 138487488060962
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "boss1",
+							"sid": 675072772741493,
+							"parameters": {
+								"instance-variable": "AttackMode",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 463305891603573
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 415010307833177,
+							"parameters": {
+								"seconds": "25"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "boss1",
+							"sid": 257997247803284,
+							"parameters": {
+								"instance-variable": "AttackMode",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 795226176565681
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "boss1",
+							"sid": 972677027022058,
+							"parameters": {
+								"instance-variable": "AttackMode",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 842062121042094
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 399846120053591,
+							"parameters": {
+								"seconds": "25"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "boss1",
+							"sid": 269983183102842,
+							"parameters": {
+								"instance-variable": "AttackMode",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 302801240424899
+				}
+			],
+			"sid": 539694945397564
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ResultsScreen",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-signal",
+							"objectClass": "System",
+							"sid": 802349224565893,
+							"parameters": {
+								"tag": "\"gameover\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Results",
+							"sid": 517322939312221,
+							"parameters": {
+								"text": "\"[u]Results:[/u]\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 975653157661163,
+							"disabled": true,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Results",
+							"sid": 615881768571668,
+							"disabled": true,
+							"parameters": {
+								"text": "Results.Text & \"\\nScore: \" & Score"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 953987428288357,
+							"disabled": true,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Results",
+							"sid": 772721165708877,
+							"disabled": true,
+							"parameters": {
+								"text": "Results.Text & \"\\nShots fired: \" & ShotsFired"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 918900370386593,
+							"disabled": true,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Results",
+							"sid": 322568784102005,
+							"disabled": true,
+							"parameters": {
+								"text": "Results.Text & \"\\nHits: \" & ShotsHit"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 116827731096276,
+							"disabled": true,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Results",
+							"sid": 957208877011724,
+							"disabled": true,
+							"parameters": {
+								"text": "Results.Text & \"\\n% Of shots hit: \" & round((ShotsHit/ShotsFired) * 100)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 630056374791015,
+							"disabled": true,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						}
+					],
+					"sid": 208028171815048
+				}
+			],
+			"sid": 284606260592203
 		}
 	],
 	"sid": 693440854965216

@@ -141,7 +141,13 @@
 			"Audio",
 			"Keyboard",
 			"Text",
-			"godMode"
+			"godMode",
+			"TutorialText",
+			"MoreTutorialText",
+			"EvenMoreTutorialText",
+			"ScoreText",
+			"BossSpawner",
+			"Results"
 		],
 		"subfolders": [
 			{
@@ -250,7 +256,8 @@
 			"Menu",
 			"Debug Mode",
 			"Thank You",
-			"Arcade"
+			"Arcade",
+			"ArcadeResults"
 		],
 		"subfolders": []
 	},
