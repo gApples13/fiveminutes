@@ -4390,6 +4390,28 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 109837238406481
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 702853428265630,
+							"parameters": {
+								"group-name": "\"Opening Credits\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 497234968342855
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 520632354199116,
@@ -5625,6 +5647,11 @@
 									"parameters": {
 										"seconds": "2"
 									}
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 379682338432550
 								},
 								{
 									"id": "set-boolean-eventvar",
