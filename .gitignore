@@ -1,5 +1,5 @@
 # construct files that keep causing merge conflicts -- if this breaks something email me.
 
-objecttypes.uistate.json
-project.uistate.json
-projectfiles.uistate.json
+src/objecttypes.uistate.json
+src/project.uistate.json
+src/projectfiles.uistate.json
