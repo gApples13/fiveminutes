@@ -175,7 +175,7 @@
 						"items": [
 							"ING875",
 							"LaserBlast",
-							"RocketPiss",
+							"RocketPss",
 							"Rockets",
 							"CountdownFrame",
 							"Countdown",
@@ -249,14 +249,16 @@
 			"Game Over",
 			"Menu",
 			"Debug Mode",
-			"Thank You"
+			"Thank You",
+			"Arcade"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
 			"MainEvents",
-			"MenuEvents"
+			"MenuEvents",
+			"ArcadeEvents"
 		],
 		"subfolders": []
 	},

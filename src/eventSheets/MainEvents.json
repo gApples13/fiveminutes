@@ -570,7 +570,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "RocketPiss",
+					"objectClass": "RocketPss",
 					"sid": 820884980095109,
 					"parameters": {
 						"visibility": "invisible"
@@ -701,7 +701,7 @@
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "RocketPiss",
+							"objectClass": "RocketPss",
 							"sid": 147041258284520,
 							"parameters": {
 								"visibility": "visible"
@@ -4432,7 +4432,7 @@
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "RocketPiss",
+							"objectClass": "RocketPss",
 							"sid": 684895532110569,
 							"parameters": {
 								"visibility": "invisible"
