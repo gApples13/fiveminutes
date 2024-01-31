@@ -2559,6 +2559,7 @@
 								}
 							],
 							"sid": 201573126155395,
+							"disabled": true,
 							"isOrBlock": true
 						},
 						{
@@ -2627,6 +2628,7 @@
 								}
 							],
 							"sid": 355957371430815,
+							"disabled": true,
 							"isOrBlock": true
 						},
 						{
@@ -4039,9 +4041,9 @@
 								{
 									"id": "typewriter-text",
 									"objectClass": "Dialogue",
-									"sid": 490978178912311,
+									"sid": 952984430337109,
 									"parameters": {
-										"text": "\"You’re better than most of our recruits, I must say. Now to move forward or decelerate, press the W and S, or Up and Down keys or your keyboard.\"",
+										"text": "\"You’re better than most of our recruits, I must say. To use weapons, press space.\"",
 										"duration": "4"
 									}
 								},
@@ -4111,6 +4113,7 @@
 					],
 					"actions": [],
 					"sid": 987814926242714,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -4173,7 +4176,8 @@
 									"sid": 182787714037078
 								}
 							],
-							"sid": 457920627973804
+							"sid": 457920627973804,
+							"disabled": true
 						}
 					],
 					"isOrBlock": true
@@ -4204,11 +4208,11 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 444475797906623,
+									"sid": 742149550200416,
 									"parameters": {
 										"variable": "TutorialStage",
 										"comparison": 0,
-										"value": "4"
+										"value": "3"
 									}
 								}
 							],
