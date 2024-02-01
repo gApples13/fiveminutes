@@ -72,9 +72,9 @@
 				{
 					"type": "Results",
 					"properties": {
-						"text": "[u]Results:[/u]\nFinal Score:1000\nShots fired: 10000\nShots hit: 10\nTotal Score: 1001\nPress Space to Play Again.",
-						"enable-bbcode": true,
-						"font": "Monospace",
+						"text": "Press [Space] to play again",
+						"enable-bbcode": false,
+						"font": "monospace",
 						"size": 48,
 						"line-height": 0,
 						"bold": true,

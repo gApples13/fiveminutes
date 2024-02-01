@@ -441,7 +441,7 @@
 					"properties": {
 						"text": "Score: 999999",
 						"enable-bbcode": true,
-						"font": "Monospace",
+						"font": "monospace",
 						"size": 24,
 						"line-height": 0,
 						"bold": false,
@@ -592,7 +592,7 @@
 					"properties": {
 						"text": "Text",
 						"enable-bbcode": true,
-						"font": "Monospace",
+						"font": "monospace",
 						"size": 12,
 						"line-height": 0,
 						"bold": false,
@@ -642,7 +642,7 @@
 					"properties": {
 						"text": "You only have five minutes to win! Use your time wisely!",
 						"enable-bbcode": true,
-						"font": "Monospace",
+						"font": "monospace",
 						"size": 12,
 						"line-height": 0,
 						"bold": false,
@@ -686,7 +686,7 @@
 					"properties": {
 						"text": "Weapons discharge and recharge. If you discharge them completely, they will take longer to recharge. ",
 						"enable-bbcode": true,
-						"font": "Monospace",
+						"font": "monospace",
 						"size": 12,
 						"line-height": 0,
 						"bold": false,

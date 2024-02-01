@@ -32,6 +32,16 @@
 			"sid": 213483185520248
 		},
 		{
+			"eventType": "variable",
+			"name": "isGameOver",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 141869913058052
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1370,14 +1380,6 @@
 							"sid": 850032466866593
 						},
 						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 769721749361602,
-							"parameters": {
-								"layout": "ArcadeResults"
-							}
-						},
-						{
 							"id": "signal",
 							"objectClass": "System",
 							"sid": 777627393875594,
@@ -1412,14 +1414,6 @@
 							"sid": 246458005277540,
 							"parameters": {
 								"seconds": "5.0"
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 175848568973785,
-							"parameters": {
-								"layout": "ArcadeResults"
 							}
 						},
 						{
@@ -1465,6 +1459,15 @@
 								"layer": "1",
 								"image-point": "0",
 								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "boss1",
+							"sid": 909639116860853,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "600"
 							}
 						},
 						{
@@ -2013,15 +2016,69 @@
 					],
 					"actions": [
 						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 128775305987982,
+							"parameters": {
+								"layout": "ArcadeResults"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 589563688475490,
+							"parameters": {
+								"variable": "isGameOver",
+								"value": "true"
+							}
+						},
+						{
 							"id": "set-text",
 							"objectClass": "Results",
-							"sid": 159847268910078,
+							"sid": 336327726609119,
 							"parameters": {
-								"text": "\"your parental figure\""
+								"text": "\"Score: \" & Score & \"\\nPlay again: [SPACE]\""
 							}
 						}
 					],
 					"sid": 208028171815048
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 818957344255995,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 255931301141767,
+							"parameters": {
+								"variable": "isGameOver"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 636924305859798
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 797744280708552,
+							"parameters": {
+								"layout": "Arcade"
+							}
+						}
+					],
+					"sid": 744213020104193
 				}
 			],
 			"sid": 284606260592203
