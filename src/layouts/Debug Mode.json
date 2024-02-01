@@ -294,7 +294,7 @@
 				{
 					"type": "VersionString",
 					"properties": {
-						"text": "5:00 version v0.0.1 BETA | Commit 09a553aadbff1082ca4cf57e4b155e884fece178 | Copyright (c) 2024 Henry Clarke.",
+						"text": "5:00 demo version v0.0.1-release | Commit 20bf73a7817193fea4f706b5f25ce9f6fb688726 | Copyright (c) 2024 Henry Clarke. GNU Affero General Public License v3.0",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
@@ -302,9 +302,9 @@
 						"bold": false,
 						"italic": false,
 						"color": [
-							0.6666666666666666,
-							0.803921568627451,
-							0.8117647058823529,
+							0.6392156862745098,
+							0.9803921568627451,
+							1,
 							1
 						],
 						"horizontal-alignment": "left",

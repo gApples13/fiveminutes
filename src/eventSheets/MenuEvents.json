@@ -235,6 +235,32 @@
 			"sid": 162723686164125
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 237848935032823,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "ArcadeModeButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 104761419107015,
+					"parameters": {
+						"layout": "Arcade"
+					}
+				}
+			],
+			"sid": 293348186445649
+		},
+		{
 			"functionName": "FadeIn",
 			"functionDescription": "",
 			"functionCategory": "",
