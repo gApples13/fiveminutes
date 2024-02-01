@@ -27,7 +27,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "TODO: Need to add options menu, maybe add arcade mode in next release."
+			"text": "TODO: Need to add options menu. TODOING: Arcade mode is being worked on in a separate branch."
 		},
 		{
 			"eventType": "block",

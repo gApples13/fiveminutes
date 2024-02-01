@@ -377,9 +377,9 @@
 				{
 					"type": "LegalDisclaimer",
 					"properties": {
-						"text": "[i]5:00[/i] Copyright © 2024 Henry Clarke\n\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.\n\nYou should have received a copy of the GNU Affero General  Public License along with this program.  If not, see <https://www.gnu.org/licenses/>.\n\nTo access the source code for this project: visit https://github.com/gApples13/fiveminutes",
+						"text": "[i]5:00[/i] Copyright © 2024 Henry Clarke\n\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.\n\nYou should have received a copy of the GNU Affero General  Public License along with this program.  If not, see <https://www.gnu.org/licenses/>.\n\nTo view this game's source code: visit https://github.com/gApples13/fiveminutes",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "monospace",
 						"size": 24,
 						"line-height": 0,
 						"bold": false,
