@@ -248,6 +248,14 @@
 					"parameters": {
 						"text": "\"Score: \" & Score"
 					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Results",
+					"sid": 796855884496599,
+					"parameters": {
+						"text": "\"Score: \" & Score & newline &\"Shots fired: \" & ShotsFired & newline & \"Shots hit: \" & ShotsHit & newline & \"Play again: [SPACE] or [ESC] to go to menu.\""
+					}
 				}
 			],
 			"sid": 217189397679181
@@ -708,6 +716,15 @@
 									"parameters": {
 										"instance-variable": "WeaponCharge",
 										"value": "1"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 231097843354385,
+									"parameters": {
+										"variable": "ShotsFired",
+										"value": "2"
 									}
 								}
 							],
@@ -1999,10 +2016,6 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "TODO: Send pipe bomb to Construct offices."
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -2079,6 +2092,43 @@
 						}
 					],
 					"sid": 744213020104193
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 399619540003791,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 779005852940787,
+							"parameters": {
+								"variable": "isGameOver"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 735993111595763
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 842904320100533,
+							"parameters": {
+								"layout": "Menu"
+							}
+						}
+					],
+					"sid": 978650120466623
 				}
 			],
 			"sid": 284606260592203
