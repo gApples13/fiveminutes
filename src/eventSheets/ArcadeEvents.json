@@ -112,9 +112,9 @@
 				{
 					"id": "typewriter-text",
 					"objectClass": "TutorialText",
-					"sid": 955447625300279,
+					"sid": 839865839485456,
 					"parameters": {
-						"text": "\"Move: Arrow Keys or WASD  Fire weapons: Space\"",
+						"text": "\"Move: Arrow Keys or A and D  Fire weapons: Space\"",
 						"duration": "2"
 					}
 				},
@@ -1182,6 +1182,7 @@
 								}
 							],
 							"sid": 781773878840686,
+							"disabled": true,
 							"isOrBlock": true
 						},
 						{
@@ -1250,6 +1251,7 @@
 								}
 							],
 							"sid": 650939259189683,
+							"disabled": true,
 							"isOrBlock": true
 						},
 						{
@@ -1368,19 +1370,19 @@
 							"sid": 850032466866593
 						},
 						{
-							"id": "signal",
-							"objectClass": "System",
-							"sid": 317202961301867,
-							"parameters": {
-								"tag": "\"gameover\""
-							}
-						},
-						{
 							"id": "go-to-layout",
 							"objectClass": "System",
 							"sid": 769721749361602,
 							"parameters": {
 								"layout": "ArcadeResults"
+							}
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 777627393875594,
+							"parameters": {
+								"tag": "\"gameover\""
 							}
 						}
 					],
@@ -1413,19 +1415,19 @@
 							}
 						},
 						{
-							"id": "signal",
-							"objectClass": "System",
-							"sid": 251390600403489,
-							"parameters": {
-								"tag": "\"gameover\""
-							}
-						},
-						{
 							"id": "go-to-layout",
 							"objectClass": "System",
 							"sid": 175848568973785,
 							"parameters": {
 								"layout": "ArcadeResults"
+							}
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 569276096448488,
+							"parameters": {
+								"tag": "\"gameover\""
 							}
 						}
 					],
@@ -1994,6 +1996,10 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "TODO: Send pipe bomb to Construct offices."
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -2009,90 +2015,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "Results",
-							"sid": 517322939312221,
+							"sid": 159847268910078,
 							"parameters": {
-								"text": "\"[u]Results:[/u]\""
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 975653157661163,
-							"disabled": true,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Results",
-							"sid": 615881768571668,
-							"disabled": true,
-							"parameters": {
-								"text": "Results.Text & \"\\nScore: \" & Score"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 953987428288357,
-							"disabled": true,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Results",
-							"sid": 772721165708877,
-							"disabled": true,
-							"parameters": {
-								"text": "Results.Text & \"\\nShots fired: \" & ShotsFired"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 918900370386593,
-							"disabled": true,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Results",
-							"sid": 322568784102005,
-							"disabled": true,
-							"parameters": {
-								"text": "Results.Text & \"\\nHits: \" & ShotsHit"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 116827731096276,
-							"disabled": true,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Results",
-							"sid": 957208877011724,
-							"disabled": true,
-							"parameters": {
-								"text": "Results.Text & \"\\n% Of shots hit: \" & round((ShotsHit/ShotsFired) * 100)"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 630056374791015,
-							"disabled": true,
-							"parameters": {
-								"seconds": "1.0"
+								"text": "\"your parental figure\""
 							}
 						}
 					],
