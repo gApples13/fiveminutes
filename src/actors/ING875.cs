@@ -9,10 +9,15 @@ public partial class ING875 : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		
+
+		Velocity = velocity;
+		MoveAndSlide();
+	}
+	float MvUpdateLateral(Vector2 dir)
+	{
 		Vector2 velocity = Velocity;
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
 		Vector2 direction = Input.GetVector("game_left", "game_right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{
@@ -23,8 +28,6 @@ public partial class ING875 : CharacterBody2D
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Deceleration);
 		}
-
-		Velocity = velocity;
-		MoveAndSlide();
+		return vel
 	}
 }
