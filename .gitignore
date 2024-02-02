@@ -1,2 +1,3 @@
 # ignoring assets to avoid people getting my game for free.
-src/assets/*
+src/assets/
+src/.godot
