@@ -1,3 +1,2 @@
-# construct files that keep causing merge conflicts -- if this breaks something email me.
-
-*.uistate.json
+# ignoring assets to avoid people getting my game for free.
+src/assets/*
