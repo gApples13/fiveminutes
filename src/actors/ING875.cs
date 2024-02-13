@@ -9,25 +9,23 @@ public partial class ING875 : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		
-
-		Velocity = velocity;
+		Vector2 direction = Input.GetVector("game_left", "game_right", "ui_up", "ui_down");
+		Velocity = MvUpdateLateral(direction);
 		MoveAndSlide();
 	}
-	float MvUpdateLateral(Vector2 dir)
+	Vector2 MvUpdateLateral(Vector2 direct)
 	{
 		Vector2 velocity = Velocity;
 
-		Vector2 direction = Input.GetVector("game_left", "game_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
+		if (direct != Vector2.Zero)
 		{
 			
-			velocity.X = Mathf.MoveToward(velocity.X, direction.X * Speed, Acceleration);
+			velocity.X = Mathf.MoveToward(velocity.X, direct.X * Speed, Acceleration);
 		}
 		else
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Deceleration);
 		}
-		return vel
+		return velocity;
 	}
 }

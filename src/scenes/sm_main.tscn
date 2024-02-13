@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bncrvoql1eu3l"]
 
-[ext_resource type="Texture2D" uid="uid://cqy13y2eua6hd" path="res://assets/sprites/ship.png" id="1_8j8uq"]
+[ext_resource type="Texture2D" uid="uid://bg3oct2ybcog7" path="res://assets/sprites/ship.png" id="1_8j8uq"]
 [ext_resource type="Script" path="res://actors/ING875.cs" id="2_gtgqc"]
 
 [node name="sm_Main" type="Node2D"]
